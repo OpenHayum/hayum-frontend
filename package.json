@@ -25,7 +25,8 @@
     "server:start": "NODE_ENV=production node ./build/main.js",
     "backpack:dev": "NODE_ENV=development DEBUG=HAYUM:* backpack dev",
     "backpack:build": "backpack build",
-    "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION"
+    "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
+    "build:all": "yarn run build && yarn run backpack:build"
   },
   "devDependencies": {
     "backpack-core": "^0.5.0",
