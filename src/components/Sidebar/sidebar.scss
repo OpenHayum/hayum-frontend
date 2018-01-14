@@ -1,3 +1,7 @@
 .Sidebar {
   display: block;
+  &--is-mobile {
+    position: absolute;
+    height: 50px;
+  }
 }

@@ -20,7 +20,10 @@ $color: blue;
     @extend %npfh;
     background: rgba(0,0,0,.5);
     color: hsla(0,0%,100%,.6);
-    
+    &--is-mobile {
+      position: relative;
+      height: 50px;
+    }
   }
   &__main {
     @extend %npfh;
