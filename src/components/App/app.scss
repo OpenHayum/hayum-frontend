@@ -1,3 +1,9 @@
-.app-wrapper {
-  background-color: #000;
+.hayum {
+  height: 100%;
+  &__sidebar {
+    display: block;
+  }
+  &__main {
+    display: block;
+  }
 }
