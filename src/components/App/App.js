@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import cssModules from "react-css-modules";
 import classNames from "classnames";
-import styles from "./app.scss";
 import Sidebar from "../Sidebar";
 import { isMobileDevice } from '../../utils';
+import styles from "./app.scss";
 
 class App extends Component {
   constructor(props) {
