@@ -1,21 +1,19 @@
 
 import mongoose from 'mongoose';
 
-export const ItemStatus = {
+export const ItemStatus = Object.freeze({
   PENDING: 'PENDING',
   REVIEWING: 'REVIEWING',
   APPROVED: 'APPROVED',
   DECLINED: 'DECLINED',
   DELETED: 'DELETED',
-};
-Object.freeze(ItemStatus);
+});
 
-export const ItemCategory = {
+export const ItemCategory = Object.freeze({
   SONG: 'SONG',
   SUMANG_LILA: 'SUMANG_LILA',
   RADIO_LILA: 'RADIO_LILA',
-};
-Object.freeze(ItemCategory);
+});
 
 export const itemSchema = new mongoose.Schema({
   name: { type: String, required: true },

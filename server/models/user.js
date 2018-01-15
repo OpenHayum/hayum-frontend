@@ -3,13 +3,12 @@ import mongoose, { Error } from 'mongoose';
 import crypto from 'crypto';
 import { MessageSchema } from './message';
 
-export const UserRoleType = {
+export const UserRoleType = Object.freeze({
   SUPER_USER: 'SUPER_USER',
   ADMIN: 'ADMIN',
   MODERATOR: 'MODERATOR',
   USER: 'USER',
-};
-Object.freeze(UserRoleType);
+});
 
 export const UserSchema = new mongoose.Schema({
   firstname: { type: String, required: true },
