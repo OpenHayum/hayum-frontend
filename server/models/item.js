@@ -8,12 +8,14 @@ export const ItemStatus = {
   DECLINED: 'DECLINED',
   DELETED: 'DELETED',
 };
+Object.freeze(ItemStatus);
 
 export const ItemCategory = {
   SONG: 'SONG',
   SUMANG_LILA: 'SUMANG_LILA',
   RADIO_LILA: 'RADIO_LILA',
 };
+Object.freeze(ItemCategory);
 
 export const itemSchema = new mongoose.Schema({
   name: { type: String, required: true },

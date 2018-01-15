@@ -9,6 +9,7 @@ export const UserRoleType = {
   MODERATOR: 'MODERATOR',
   USER: 'USER',
 };
+Object.freeze(UserRoleType);
 
 export const UserSchema = new mongoose.Schema({
   firstname: { type: String, required: true },
