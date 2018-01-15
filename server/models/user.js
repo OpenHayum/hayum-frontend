@@ -1,5 +1,5 @@
 /* eslint-disable func-names */
-import mongoose from 'mongoose';
+import mongoose, { Error } from 'mongoose';
 import crypto from 'crypto';
 import { MessageSchema } from './message';
 
@@ -15,29 +15,24 @@ export const UserSchema = new mongoose.Schema({
   lastname: { type: String, required: true },
   username: { type: String, required: true },
   email: { type: String, required: true },
-  hashedPassword: String,
-  otp: String,
-  salt: String,
-  role: String,
+  hashedPassword: { type: String, select: false },
+  otp:  { type: String, select: false },
+  salt:  { type: String, select: false },
   isArtist: Boolean,
-  isActivated: Boolean,
   awsS3Id: {
     profilePicture: String,
     coverPicture: String,
   },
-  followers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  }],
-  favorites: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Item',
-  }],
-  messages: [MessageSchema],
-  uploaded: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Item',
-  }],
+  meta: {
+    role: String,
+    isActivated: Boolean,
+    numberOfFavorites: Number,
+    numberOfItemsUploaded: Number,
+    favorites: [{
+      itemId: String,
+      itemName: String,
+    }],
+  },
   createdDate: { type: Date, default: Date.now },
   modifiedDate: Date,
   deletedDate: Date,
@@ -45,6 +40,9 @@ export const UserSchema = new mongoose.Schema({
 
 UserSchema.virtual('password')
   .set(function (password) {
+    if (password === null || password === '') {
+      throw new Error('Password is empty');
+    }
     this.salt = this.makeSalt();
     this.hashed_password = this.encrypt(password);
   })
