@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 
-export const FavoriteSchema = new mongoose.Schema({
+const FavoriteSchema = new mongoose.Schema({
   userId: String,
+  userName: String,
   itemId: String,
-  name: String,
+  itemName: String,
   artist: String,
 });
 

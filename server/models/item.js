@@ -31,12 +31,7 @@ export const itemSchema = new mongoose.Schema({
     downloads: { type: Number, default: 0 },
     views: { type: Number, default: 0 },
     plays: { type: Number, default: 0 },
-    favorites: [
-      {
-        userId: String,
-        username: String,
-      },
-    ],
+    numberOfFavorites: { type: Number, default: 0 }, 
   },
   uploadedBy: String,
   moderatedBy: String,
