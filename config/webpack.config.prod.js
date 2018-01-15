@@ -221,8 +221,9 @@ module.exports = {
                 use: [{
                     loader: "css-loader",
                     options: {
-                      url: true,
-                    },
+                      modules: true,
+                      importLoaders: 1,
+                      localIdentName: '[name]__[local]--[hash:base64:8]',                    },
                 }, {
                     loader: "sass-loader"
                 }],
