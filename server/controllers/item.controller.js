@@ -70,4 +70,4 @@ router.post('/:id/favorite', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -25,14 +25,14 @@ class App extends Component {
     return (
       <div ref={this.setRef} className="container-fluid" styleName="hayum">
         <div
-          className="col-lg-2"
+          className="col-lg-2 col-md-3 col-sm-3"
           styleName={classNames("hayum__sidebar", {
             "hayum__sidebar--is-mobile": this.isMobileDevice
           })}
         >
           <Sidebar isMobileDevice={this.isMobileDevice} />
         </div>
-        <div className="col-lg-10" styleName="hayum__main">
+        <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
           Hello
         </div>
       </div>

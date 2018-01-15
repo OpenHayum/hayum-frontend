@@ -21,7 +21,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "server:start": "NODE_ENV=production node ./build/main.js",
     "backpack:dev": "NODE_ENV=development DEBUG=HAYUM:* backpack dev",
-    "backpack:build": "backpack build",
+    "backpack:build": "NODE_ENV=production backpack build",
     "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
     "build:all": "yarn run build && yarn run backpack:build"
   },
