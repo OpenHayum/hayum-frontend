@@ -2,6 +2,7 @@
 import mongoose, { Error } from 'mongoose';
 import crypto from 'crypto';
 import { MessageSchema } from './message';
+import { S3DocumentSchema } from './s3Document';
 
 export const UserRoleType = Object.freeze({
   SUPER_USER: 'SUPER_USER',
@@ -19,10 +20,8 @@ export const UserSchema = new mongoose.Schema({
   otp:  { type: String, select: false },
   salt:  { type: String, select: false },
   isArtist: Boolean,
-  awsS3Id: {
-    profilePicture: String,
-    coverPicture: String,
-  },
+  profilePicture: S3DocumentSchema,
+  coverPicture: S3DocumentSchema,
   meta: {
     role: String,
     isActivated: Boolean,

@@ -1,5 +1,6 @@
 
 import mongoose from 'mongoose';
+import { S3DocumentSchema } from './s3Document';
 
 export const ItemStatus = Object.freeze({
   PENDING: 'PENDING',
@@ -21,11 +22,9 @@ export const itemSchema = new mongoose.Schema({
   isOldSong: { type: Boolean, default: false },
   album: String,
   category: { type: String, default: ItemCategory.SONG },
-  awsS3Id: {
-    item: { type: String, required: true },
-    picture: String,
-  },
+  thumbnail: { type: S3DocumentSchema, required: true },
   status: { type: String, default: ItemStatus.PENDING },
+  s3Document: S3DocumentSchema,
   meta: {
     size: Number,
     downloads: { type: Number, default: 0 },
