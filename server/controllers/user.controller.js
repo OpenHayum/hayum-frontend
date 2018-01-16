@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const { User } = require('../models/user');
-const { badRequest, notFound } = require('../errors/index');
+import { Router } from 'express';
+import User from '../models/user';
+import { badRequest, notFound } from '../errors';
 
 const router = Router();
 
@@ -34,4 +34,4 @@ router.get('/:id', (req, res, next) => {
     .catch(() => next(notFound('User Not Found')));
 });
 
-module.exports = router;
+export default router;

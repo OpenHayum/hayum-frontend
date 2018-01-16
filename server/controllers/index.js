@@ -5,7 +5,7 @@ import userController from './user.controller';
 const router = Router();
 const API_VERSIONS = { V1: 'v1'};
 
-router.use(`${API_VERSIONS.V1}/item`, itemController);
-router.use(`${API_VERSIONS.V1}/user`, userController);
+router.use(`/${API_VERSIONS.V1}/item`, itemController);
+router.use(`/${API_VERSIONS.V1}/user`, userController);
 
 export default router;

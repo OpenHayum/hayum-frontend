@@ -17,13 +17,12 @@ app.use(morgan('combined'));
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
-// Always return the main index.html, so react-router render the route in the client
+app.use('/api', controllers);
+
 app.use('/', (req, res) => {
   const filePath = path.resolve(__dirname, '..', 'build', 'index.html');
   res.sendFile(filePath)
 });
-
-app.use('/api', controllers);
 
 app.use((req, res, next) => {
   next(notFound());

@@ -1,9 +1,12 @@
-const { Router } = require('express');
-const AWSS3 = require('../lib/s3');
+import { Router } from 'express';
+import log from 'debug';
+import AWSS3 from '../lib/s3';
+
 // const { S3Document } = require('../models/s3Document');
 // const { badRequest, notFound } = require('../errors');
 
 const router = Router();
+const debug = log()('HAYUM: S3Controller');
 
 /**
  * /s3/upload
@@ -84,4 +87,4 @@ router.get('/dl/', (req, res, next) => {
   });
 })
 
-module.exports = router;
+export default router;

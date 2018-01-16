@@ -16,7 +16,7 @@ export const ItemCategory = Object.freeze({
   RADIO_LILA: 'RADIO_LILA',
 });
 
-export const itemSchema = new mongoose.Schema({
+export const ItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
   artist: { type: String, required: true },
   isOldSong: { type: Boolean, default: false },
@@ -39,7 +39,7 @@ export const itemSchema = new mongoose.Schema({
   deletedDate: Date,
 });
 
-itemSchema.statics = {
+ItemSchema.statics = {
   /**
    * get all items by status
    * @param {string} status
@@ -76,4 +76,4 @@ itemSchema.statics = {
   },
 };
 
-export default mongoose.model('Item', itemSchema);
+export default mongoose.model('Item', ItemSchema);

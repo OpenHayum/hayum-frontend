@@ -1,7 +1,7 @@
-const { Router } = require('express');
-const { Item, ItemStatus } = require('../models/item');
-const { User } = require('../models/user');
-const { badRequest, notFound } = require('../errors/index');
+import { Router } from 'express';
+import User from '../models/user';
+import { badRequest, notFound } from '../errors';
+import Item, { ItemStatus } from '../models/item';
 
 const router = Router();
 
