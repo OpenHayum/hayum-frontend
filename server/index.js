@@ -23,7 +23,7 @@ app.use('/', (req, res) => {
   res.sendFile(filePath)
 });
 
-app.use('/', controllers);
+app.use('/api', controllers);
 
 app.use((req, res, next) => {
   next(notFound());
