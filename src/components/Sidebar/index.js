@@ -44,6 +44,7 @@ class Sidebar extends Component {
           "Sidebar--is-mobile": isMobileDevice
         })}
       >
+        <div />
         <Menus menusData={menusData} />
       </div>
     );
