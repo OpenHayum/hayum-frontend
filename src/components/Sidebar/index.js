@@ -5,25 +5,6 @@ import PropTypes from "prop-types";
 import Menus from "./Menus";
 import styles from "./sidebar.scss";
 
-const menusData = [
-  {
-    linkTo: "/music",
-    text: "Music"
-  },
-  {
-    linkTo: "/leela/sumang",
-    text: "Sumang Leela"
-  },
-  {
-    linkTo: "/leela/radio",
-    text: "Radio Leela"
-  },
-  {
-    linkTo: "/collections",
-    text: "Collections"
-  }
-];
-
 class Sidebar extends Component {
   static propTypes = {
     isMobileDevice: PropTypes.bool.isRequired
@@ -44,8 +25,14 @@ class Sidebar extends Component {
           "Sidebar--is-mobile": isMobileDevice
         })}
       >
-        <div />
-        <Menus menusData={menusData} />
+        <div styleName="Sidebar__logo" />
+        <Menus />
+        <div styleName="Sidebar__footer">
+          <div>
+            <i className="icon-user" />
+            <span>RedJohn</span>
+          </div>
+        </div>
       </div>
     );
   }

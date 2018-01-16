@@ -1,10 +1,16 @@
 @import "~Styles/settings.scss";
 
+$border: 1px solid rgba(214, 214, 214, 0.082);
+
 .Menus {
   display: block;
+  margin-top: 100px;
   &__menu {
     background-color: rgba(89, 66, 66, 0.1);
-    border-bottom: 1px solid rgba(214, 214, 214, 0.082);
+    border-bottom: $border;
+    &:first-child {
+      border-top: $border;
+    }
     a {
       display: block;
       color: hsla(0, 0%, 100%, 0.6);

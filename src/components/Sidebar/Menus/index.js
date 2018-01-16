@@ -26,14 +26,36 @@ class Menus extends Component {
 
     return (
       <ul styleName="Menus">
-        {menusData.map(data => (
-          <li styleName="Menus__menu">
-            <Link to={data.linkTo}>
-              <i className="icon-music-tone" />
-              {data.text}
-            </Link>
-          </li>
-        ))}
+        <li styleName="Menus__menu">
+          <Link to="/music">
+            <i className="icon-music-tone" />
+            Music
+          </Link>
+        </li>
+        <li styleName="Menus__menu">
+          <Link to="/music/old">
+            <i className="icon-music-tone" />
+            Ariba Esei
+          </Link>
+        </li>
+        <li styleName="Menus__menu">
+          <Link to="/leela/sumang">
+            <i className="icon-music-tone" />
+            Sumang Leela
+          </Link>
+        </li>
+        <li styleName="Menus__menu">
+          <Link to="/leela/radio">
+            <i className="icon-music-tone" />
+            Radio Leela
+          </Link>
+        </li>
+        <li styleName="Menus__menu">
+          <Link to="/collections">
+            <i className="icon-music-tone" />
+            Collections
+          </Link>
+        </li>
       </ul>
     );
   }

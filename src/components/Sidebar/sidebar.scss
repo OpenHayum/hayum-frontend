@@ -2,8 +2,10 @@
 
 .Sidebar {
   display: block;
+  position: relative;
   color: $main-text-color;
-  div {
+  height: 100%;
+  &__logo {
     background: url("Images/hy_logo.png") no-repeat center;
     width: 100%;
     height: 20px;
@@ -13,5 +15,10 @@
   &--is-mobile {
     position: absolute;
     height: 50px;
+  }
+  &__footer {
+    position: absolute;
+    display: block;
+    bottom: 110px;
   }
 }
