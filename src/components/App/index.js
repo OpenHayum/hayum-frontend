@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import cssModules from "react-css-modules";
 import classNames from "classnames";
 import Sidebar from "../Sidebar";
-import { isMobileDevice } from '../../utils';
+import { isMobileDevice } from "../../utils";
 import styles from "./app.scss";
 
 class App extends Component {

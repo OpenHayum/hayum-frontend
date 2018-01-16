@@ -1,9 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './static/css/bootstrap.min.css';
-import './index.css';
-import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import "./static/css/bootstrap.min.css";
+import "./index.css";
+import App from "./components/App";
+import Routes from './Routes';
+import registerServiceWorker from "./registerServiceWorker";
+
+ReactDOM.render(
+  <Routes />,
+  document.getElementById("root")
+);
 registerServiceWorker();

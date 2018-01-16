@@ -10,11 +10,14 @@
   @extend %no-padding;
   @extend %full-height;
 }
-
+// 594242
 $color: blue;
 
+$background-1: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
+$background-2: linear-gradient(#AA6962, #4A3242 85%);
+
 .hayum {
-  background: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
+  background: $background-2;
   @extend %npfh;
   &__sidebar {
     @extend %npfh;
