@@ -28,7 +28,10 @@ class Menus extends Component {
       <ul styleName="Menus">
         {menusData.map(data => (
           <li styleName="Menus__menu">
-            <Link to={data.linkTo}>{data.text}</Link>
+            <Link to={data.linkTo}>
+              <i className="icon-music-tone" />
+              {data.text}
+            </Link>
           </li>
         ))}
       </ul>
