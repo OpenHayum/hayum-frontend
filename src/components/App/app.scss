@@ -14,15 +14,15 @@
 $color: blue;
 
 $background-1: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
-$background-2: linear-gradient(#AA6962, #4A3242 85%);
+$background-2: linear-gradient(#aa6962, #4a3242 85%);
 
 .hayum {
   background: $background-2;
   @extend %npfh;
   &__sidebar {
     @extend %npfh;
-    background: rgba(0,0,0,.5);
-    color: hsla(0,0%,100%,.6);
+    background: rgba(0, 0, 0, 0.5);
+    color: hsla(0, 0%, 100%, 0.6);
     &--is-mobile {
       position: relative;
       height: 50px;
