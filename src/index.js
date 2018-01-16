@@ -4,12 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./static/css/bootstrap.min.css";
 import "./index.css";
+import "./index.scss";
 import App from "./components/App";
-import Routes from './Routes';
+import Routes from "./Routes";
 import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(
-  <Routes />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Routes />, document.getElementById("root"));
 registerServiceWorker();

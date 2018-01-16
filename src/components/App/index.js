@@ -32,9 +32,7 @@ class App extends Component {
         >
           <Sidebar isMobileDevice={this.isMobileDevice} />
         </div>
-        <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
-          Hello
-        </div>
+        <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main" />
       </div>
     );
   }
