@@ -1,37 +1,6 @@
 @import "~Styles/settings.scss";
 
-$border: 1px solid rgba(214, 214, 214, 0.082);
-
 .Menus {
   display: block;
   margin-top: 100px;
-  &__menu {
-    background-color: rgba(89, 66, 66, 0.1);
-    border-bottom: $border;
-    &:first-child {
-      border-top: $border;
-    }
-    a {
-      display: block;
-      color: hsla(0, 0%, 100%, 0.6);
-      padding: 10px 20px;
-      cursor: pointer;
-      user-select: none;
-      text-decoration: none;
-      font-family: $main-font;
-      font-size: $font-md;
-      font-weight: 300;
-      transition-property: background-color;
-      transition-duration: 0.2s;
-      transition-timing-function: linear;
-      &:hover {
-        color: rgba(255, 255, 255, 0.747);
-        background-color: rgba(89, 66, 66, 0.24);
-      }
-      i {
-        font-size: $font-sm;
-        margin-right: 10px;
-      }
-    }
-  }
 }

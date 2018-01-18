@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import NavMenu from "./NavMenu";
 import styles from "./menus.scss";
 
 class Menus extends Component {
@@ -25,38 +27,14 @@ class Menus extends Component {
     const { menusData } = this.props;
 
     return (
-      <ul styleName="Menus">
-        <li styleName="Menus__menu" className="hover-transition">
-          <Link to="/music">
-            <i className="icon-music-tone" />
-            Music
-          </Link>
-        </li>
-        <li styleName="Menus__menu" className="hover-transition">
-          <Link to="/music/old">
-            <i className="icon-music-tone" />
-            Ariba Esei
-          </Link>
-        </li>
-        <li styleName="Menus__menu" className="hover-transition">
-          <Link to="/leela/sumang">
-            <i className="icon-music-tone" />
-            Sumang Leela
-          </Link>
-        </li>
-        <li styleName="Menus__menu" className="hover-transition">
-          <Link to="/leela/radio">
-            <i className="icon-music-tone" />
-            Radio Leela
-          </Link>
-        </li>
-        <li styleName="Menus__menu" className="hover-transition">
-          <Link to="/nokfade">
-            <i className="icon-music-tone" />
-            Nokfade
-          </Link>
-        </li>
-      </ul>
+      <nav styleName="Menus">
+        <NavMenu to="/" text="Home" />
+        <NavMenu to="/music" text="Music" />
+        <NavMenu to="/music/old" text="Ariba Esei" />
+        <NavMenu to="/leela/sumang" text="Sumang Leela" />
+        <NavMenu to="/leela/radio" text="Radio Leela" />
+        <NavMenu to="/nokfade" text="Nokfade" />
+      </nav>
     );
   }
 }
