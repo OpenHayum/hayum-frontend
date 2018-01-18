@@ -16,7 +16,6 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { isMobileDevice } = this.props;
     return (
       <div styleName="Sidebar">
         <div styleName="Sidebar__logo">
