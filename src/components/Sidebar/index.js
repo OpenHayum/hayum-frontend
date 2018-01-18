@@ -6,9 +6,7 @@ import Menus from "./Menus";
 import styles from "./sidebar.scss";
 
 class Sidebar extends Component {
-  static propTypes = {
-    isMobileDevice: PropTypes.bool.isRequired
-  };
+  static propTypes = {};
 
   static defaultProps = {};
 
@@ -20,18 +18,14 @@ class Sidebar extends Component {
   render() {
     const { isMobileDevice } = this.props;
     return (
-      <div
-        styleName={classNames("Sidebar", {
-          "Sidebar--is-mobile": isMobileDevice
-        })}
-      >
-        <div styleName="Sidebar__logo" />
+      <div styleName="Sidebar">
+        <div styleName="Sidebar__logo">
+          <div />
+        </div>
         <Menus />
         <div styleName="Sidebar__footer">
-          <div>
-            <i className="icon-user" />
-            <span>RedJohn</span>
-          </div>
+          <i className="icon-user" />
+          <span>RedJohn</span>
         </div>
       </div>
     );

@@ -6,19 +6,33 @@
   color: $main-text-color;
   height: 100%;
   &__logo {
-    background: url("Images/hy_logo.png") no-repeat center;
-    width: 100%;
-    height: 20px;
-    background-size: contain;
-    margin: 10px 0;
-  }
-  &--is-mobile {
-    position: absolute;
-    height: 50px;
+    padding-top: 10px;
+    div {
+      background: url("Images/hy_logo.png") no-repeat center;
+      height: 30px;
+      width: 100%;
+      background-size: contain;
+    }
   }
   &__footer {
     position: absolute;
     display: block;
     bottom: 110px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(240, 240, 240, 0.562);
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: rgba(255, 255, 255, 0.904);
+    }
+    i {
+      font-weight: bold;
+    }
+    span {
+      margin-left: 10px;
+    }
   }
 }

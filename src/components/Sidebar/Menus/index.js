@@ -26,34 +26,34 @@ class Menus extends Component {
 
     return (
       <ul styleName="Menus">
-        <li styleName="Menus__menu">
+        <li styleName="Menus__menu" className="hover-transition">
           <Link to="/music">
             <i className="icon-music-tone" />
             Music
           </Link>
         </li>
-        <li styleName="Menus__menu">
+        <li styleName="Menus__menu" className="hover-transition">
           <Link to="/music/old">
             <i className="icon-music-tone" />
             Ariba Esei
           </Link>
         </li>
-        <li styleName="Menus__menu">
+        <li styleName="Menus__menu" className="hover-transition">
           <Link to="/leela/sumang">
             <i className="icon-music-tone" />
             Sumang Leela
           </Link>
         </li>
-        <li styleName="Menus__menu">
+        <li styleName="Menus__menu" className="hover-transition">
           <Link to="/leela/radio">
             <i className="icon-music-tone" />
             Radio Leela
           </Link>
         </li>
-        <li styleName="Menus__menu">
-          <Link to="/collections">
+        <li styleName="Menus__menu" className="hover-transition">
+          <Link to="/nokfade">
             <i className="icon-music-tone" />
-            Collections
+            Nokfade
           </Link>
         </li>
       </ul>

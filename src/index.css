@@ -10,3 +10,10 @@ body,
   width: 100%;
   height: 100%;
 }
+
+.hover-transition {
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  color: hsla(0, 0%, 100%, 0.6);
+}
