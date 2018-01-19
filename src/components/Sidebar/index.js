@@ -23,7 +23,7 @@ class Sidebar extends Component {
         <div styleName="Sidebar__logo">
           <div />
         </div>
-        <NavMenu to="/search">
+        <NavMenu to="/search" className={styles.Sidebar__search}>
           <span>Search</span>
           <span>
             <i className="icon-magnifier" />

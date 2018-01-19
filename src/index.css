@@ -8,6 +8,8 @@ html,
 body,
 .switch-wrapper,
 .switch-wrapper > div,
+.full-width-height-route,
+.full-width-height-route > div,
 #root {
   width: 100%;
   height: 100%;
