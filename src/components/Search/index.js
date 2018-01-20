@@ -3,6 +3,8 @@ import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import styles from "./search.scss";
 
+import mockData from "../../mocks/searchMockData";
+
 class Search extends Component {
   static propTypes = {};
 
@@ -11,6 +13,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    console.info(mockData);
   }
 
   render() {
@@ -23,6 +26,7 @@ class Search extends Component {
             name="search"
             autoFocus
             placeholder="Start typing and press enter..."
+            autoComplete="off"
           />
         </div>
       </div>
