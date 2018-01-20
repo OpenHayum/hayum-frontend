@@ -8,8 +8,9 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
     border-top: $border;
   }
   a {
+    @extend %hover-transition;
     display: block;
-    color: hsla(0, 0%, 100%, 0.6);
+    color: $text-main;
     padding: 10px 20px;
     cursor: pointer;
     user-select: none;
@@ -17,12 +18,9 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
     font-family: $main-font;
     font-size: $font-md;
     font-weight: 300;
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
     &:hover {
       color: rgba(255, 255, 255, 0.747);
-      background-color: rgba(89, 66, 66, 0.24);
+      background-color: rgba(77, 52, 52, 0.397);
     }
     i {
       font-size: $font-sm;

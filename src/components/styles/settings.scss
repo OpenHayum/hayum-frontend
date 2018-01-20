@@ -6,3 +6,14 @@ $font-xsm: 10px;
 $font-sm: 12px;
 $font-md: 14px;
 $font-lg: 16px;
+
+// text colors
+$text-darker: rgba(240, 240, 240, 0.562);
+$text-darker-hover: rgba(255, 255, 255, 0.904);
+$text-main: hsla(0, 0%, 100%, 0.6);
+
+%hover-transition {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}

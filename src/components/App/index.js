@@ -22,7 +22,12 @@ class App extends Component {
           <Sidebar />
         </div>
         <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
-          <Route exact path="/search" component={Search} />
+          <AnimatedRoute
+            {...bounceTransition}
+            exact
+            path="/search"
+            component={Search}
+          />
         </div>
         <div styleName="hayum__player" />
       </div>

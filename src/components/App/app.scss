@@ -23,7 +23,7 @@ $background-2: linear-gradient(#aa6962, #4a3242 85%);
   @extend %npfh;
   &__sidebar {
     @extend %npfh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.28);
     color: hsla(0, 0%, 100%, 0.6);
     &--is-mobile {
       position: relative;

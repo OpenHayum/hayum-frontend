@@ -16,7 +16,15 @@ class Search extends Component {
   render() {
     return (
       <div styleName="Search">
-        <h5>Search by Artist, Album, </h5>
+        <div styleName="Search__bar">
+          <h5>Search by Song Name, Artist, Album</h5>
+          <input
+            type="text"
+            name="search"
+            autoFocus
+            placeholder="Start typing and press enter..."
+          />
+        </div>
       </div>
     );
   }

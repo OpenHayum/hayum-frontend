@@ -34,11 +34,11 @@
     width: 100%;
     font-size: 16px;
     font-weight: 400;
-    color: rgba(240, 240, 240, 0.562);
+    color: $text-darker;
     cursor: pointer;
     user-select: none;
     &:hover {
-      color: rgba(255, 255, 255, 0.904);
+      color: $text-darker-hover;
     }
     i {
       font-weight: bold;
