@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
+
+import SearchResult from "./SearchResult";
 import styles from "./search.scss";
 
 import mockData from "../../mocks/searchMockData";
@@ -12,11 +14,26 @@ class Search extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
-    console.info(mockData);
+    this.state = {
+      result: []
+    };
   }
 
+  handleEnterKeyDown = ({ target, keyCode }) => {
+    if (keyCode !== 13) return;
+    const { name, value } = target;
+    const valueRegex = new RegExp(value, "i");
+    const result = mockData.filter(
+      item =>
+        valueRegex.test(item.name) ||
+        valueRegex.test(item.album) ||
+        valueRegex.test(item.artist)
+    );
+    this.setState({ result });
+  };
+
   render() {
+    const { result } = this.state;
     return (
       <div styleName="Search">
         <div styleName="Search__bar">
@@ -27,7 +44,11 @@ class Search extends Component {
             autoFocus
             placeholder="Start typing and press enter..."
             autoComplete="off"
+            onKeyDown={this.handleEnterKeyDown}
           />
+        </div>
+        <div styleName="Search__result">
+          <SearchResult result={result} />
         </div>
       </div>
     );
