@@ -84,8 +84,11 @@ $spacing-controls: 20px;
     transition-property: all;
     z-index: 3;
     background: transparent;
+    &--normal {
+      border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
+    }
     &:hover,
-    &--active {
+    &--play {
       border-color: #fff !important;
       transition-duration: 66ms;
       transition: none 33ms cubic-bezier(0.3, 0, 0, 1);
@@ -96,16 +99,20 @@ $spacing-controls: 20px;
         transition-duration: 66ms;
         transition: none 33ms cubic-bezier(0.3, 0, 0, 1);
         transition-property: all;
+        transform: scale(0);
       }
     }
     &::before {
       font-family: "simple-line-icons";
-      content: "\e071";
-      margin-left: 2px;
-    }
-    &--pause::before {
       content: "\e072";
       margin-left: 0;
+    }
+    &--pause {
+      transition-delay: 0.1s;
+      &::before {
+        content: "\e071";
+        margin-left: 2px;
+      }
     }
   }
   &__container {

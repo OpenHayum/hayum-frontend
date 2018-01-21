@@ -145,7 +145,8 @@ class AudioPlayer extends Component {
                 styleName={classnames(
                   "AudioPlayer__icon AudioPlayer__circle AudioPlayer__control",
                   {
-                    "AudioPlayer__circle--active AudioPlayer__circle--pause": isPlaying
+                    "AudioPlayer__circle--play": isPlaying,
+                    "AudioPlayer__circle--pause": !isPlaying
                   }
                 )}
                 onClick={this.handleControlClick}
