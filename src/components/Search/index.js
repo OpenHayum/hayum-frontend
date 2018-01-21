@@ -26,7 +26,7 @@ class Search extends Component {
 
   handleChange = ({ target }) => {
     const { name, value } = target;
-    const valueRegex = new RegExp(value, "i");
+    const valueRegex = new RegExp(`(${value.split(" ").join("|")})`, "i");
     const result = mockData.filter(
       item =>
         valueRegex.test(item.name) ||
