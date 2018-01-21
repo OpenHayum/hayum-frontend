@@ -5,7 +5,7 @@ const initialState = {
   background: getBGColor()
 };
 
-const appReducer = (state = {}, action) => {
+const appReducer = (state = initialState, action) => {
   switch (action.type) {
     case HAYUM_CHANGE_BACKGROUND:
       return { ...state, ...action.payload };

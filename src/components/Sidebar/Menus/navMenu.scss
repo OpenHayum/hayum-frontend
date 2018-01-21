@@ -2,7 +2,7 @@
 $border: 1px solid rgba(214, 214, 214, 0.082);
 
 .NavMenu {
-  background-color: rgba(89, 66, 66, 0.1);
+  background-color: rgba(89, 66, 66, 0.027);
   border-bottom: $border;
   &:first-child {
     border-top: $border;
@@ -20,7 +20,7 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
     font-weight: 300;
     &:hover {
       color: rgba(255, 255, 255, 0.747);
-      background-color: rgba(77, 52, 52, 0.397);
+      background-color: rgba(0, 0, 0, 0.062);
     }
     i {
       font-size: $font-sm;
