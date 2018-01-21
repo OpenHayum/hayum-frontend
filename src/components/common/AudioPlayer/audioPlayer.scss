@@ -84,9 +84,6 @@ $spacing-controls: 20px;
     transition-property: all;
     z-index: 3;
     background: transparent;
-    &--normal {
-      border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
-    }
     &:hover,
     &--play {
       border-color: #fff !important;
