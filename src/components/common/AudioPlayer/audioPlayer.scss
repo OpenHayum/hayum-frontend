@@ -13,16 +13,26 @@ $spacing-controls: 20px;
     display: table-cell;
     vertical-align: middle;
     padding-left: 16px;
+    width: 320px;
     &__details {
-      display: inline-block;
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 16px;
+      h4 {
+        color: #a0a0a0;
+      }
     }
   }
 
   &__volume {
-    width: 200px;
+    width: 320px;
     border-radius: 4px;
     display: table-cell;
     vertical-align: middle;
+    padding-right: 16px;
+    > div {
+      float: right;
+    }
     &__icon {
       color: #fff;
       display: table-cell;
@@ -63,7 +73,7 @@ $spacing-controls: 20px;
     vertical-align: middle;
     &__wrapper {
       width: 300px;
-      margin: 0 auto;
+      margin: -16px auto 0 auto;
     }
     &__controls {
       margin: 10px auto;

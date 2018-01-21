@@ -63,11 +63,13 @@ class AudioPlayer extends Component {
           </div>
         </div>
         <div styleName="AudioPlayer__volume">
-          <div styleName="AudioPlayer__volume__icon">
-            <i className="icon-volume-2" />
-          </div>
-          <div styleName="AudioPlayer__volume__controls">
-            <div styleName="AudioPlayer__volume__controls__timeline" />
+          <div>
+            <div styleName="AudioPlayer__volume__icon">
+              <i className="icon-volume-2" />
+            </div>
+            <div styleName="AudioPlayer__volume__controls">
+              <div styleName="AudioPlayer__volume__controls__timeline" />
+            </div>
           </div>
         </div>
       </div>
