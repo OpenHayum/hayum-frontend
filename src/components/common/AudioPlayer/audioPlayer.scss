@@ -1,11 +1,45 @@
 $spacing-controls: 20px;
 
 .AudioPlayer {
+  display: table;
+  height: 100%;
+  width: 100%;
+
   button {
     background: transparent;
     border: none;
   }
-  display: block;
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 16px;
+    &__details {
+      display: inline-block;
+    }
+  }
+
+  &__volume {
+    width: 200px;
+    border-radius: 4px;
+    display: table-cell;
+    vertical-align: middle;
+    &__icon {
+      color: #fff;
+      display: table-cell;
+      padding-right: 10px;
+    }
+    &__controls {
+      width: 100px;
+      display: table-cell;
+      vertical-align: middle;
+      &__timeline {
+        border-radius: 4px;
+        height: 4px;
+        background: #fff;
+      }
+    }
+  }
+
   &__right-spacing {
     margin-right: $spacing-controls;
   }
@@ -25,8 +59,12 @@ $spacing-controls: 20px;
     }
   }
   &__container {
-    margin: 0 auto;
-    width: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    &__wrapper {
+      width: 300px;
+      margin: 0 auto;
+    }
     &__controls {
       margin: 10px auto;
       width: 240px;
