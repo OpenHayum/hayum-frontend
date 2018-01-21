@@ -7,6 +7,7 @@ import classNames from "classnames";
 
 import Sidebar from "../Sidebar";
 import Search from "../Search";
+import AudioPlayer from "../common/AudioPlayer";
 import { bounceTransition } from "../../utils/router.animated";
 import styles from "./app.scss";
 
@@ -36,7 +37,9 @@ class App extends Component {
             component={Search}
           />
         </div>
-        <div styleName="hayum__player" />
+        <div styleName="hayum__player">
+          <AudioPlayer />
+        </div>
       </div>
     );
   }

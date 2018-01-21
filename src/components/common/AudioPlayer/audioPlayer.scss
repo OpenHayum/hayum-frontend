@@ -1,0 +1,75 @@
+.AudioPlayer {
+  button {
+    background: transparent;
+    border: none;
+  }
+  display: block;
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+  &__circle {
+    border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
+    border-radius: 50%;
+    margin: 0 20px;
+    i {
+      margin-left: 4px;
+      line-height: 2;
+    }
+  }
+  &__container {
+    margin: 0 auto;
+    width: 300px;
+    &__controls {
+      margin: 10px auto;
+      width: 136px;
+      margin-bottom: 16px;
+    }
+  }
+  &__control {
+    color: hsla(0, 0%, 100%, 0.6);
+    font-weight: 200;
+    outline: none;
+  }
+  &__timeline-container {
+    width: 100%;
+    position: relative;
+  }
+  &__timeline {
+    position: relative;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(1, 0, 0.7, 1);
+    background-color: #a0a0a0;
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+  }
+  &__playhead {
+    transition-property: transform;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
+    transform: scale(1);
+    background-color: #fff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -4px;
+    z-index: 100;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    position: absolute;
+  }
+  &__playback-time {
+    position: absolute;
+    min-width: 40px;
+    width: 40px;
+    top: -8px;
+    &__left {
+      left: -45px;
+    }
+    &__right {
+      right: -45px;
+    }
+  }
+}
