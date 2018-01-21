@@ -21,20 +21,106 @@ class AudioPlayer extends Component {
 
   constructor(props) {
     super(props);
+    const DURATION = 180;
     this.state = {
-      isPlaying: false
+      isPlaying: false,
+      playheadPosition: 0,
+      activeTimelineWidth: 0,
+      currentDuration: "00:00",
+      totalDuration: this.formatTime(DURATION)
     };
+
+    this.timeline = null;
+    this.playhead = null;
+    this.mouseOnPlayhead = false;
+    this.duration = DURATION;
   }
 
+  componentDidMount() {
+    window.addEventListener("mouseup", this.mouseUp, false);
+  }
+
+  clickPercent = event => {
+    const { left, width } = this.getPosition(this.timeline);
+    return (event.clientX - left) / width;
+  };
+
+  formatTime = seconds => {
+    var minutes = Math.floor(seconds / 60);
+    minutes = minutes >= 10 ? minutes : "0" + minutes;
+    var seconds = Math.floor(seconds % 60);
+    seconds = seconds >= 10 ? seconds : "0" + seconds;
+    return minutes + ":" + seconds;
+  };
+
   handleControlClick = ({ target }) => {
-    console.log(target.name, this.state.isPlaying);
     this.setState({
       [target.name]: !this.state.isPlaying
     });
   };
 
+  handleTimelineClick = e => {
+    // console.info(e);
+    this.movePlayhead(e);
+  };
+
+  getPosition = el => {
+    return el.getBoundingClientRect();
+  };
+
+  mouseDown = () => {
+    this.mouseOnPlayhead = true;
+    window.addEventListener("mousemove", this.movePlayhead, true);
+  };
+
+  mouseUp = event => {
+    if (this.mouseOnPlayhead == true) {
+      this.movePlayhead(event);
+      window.removeEventListener("mousemove", this.movePlayhead, true);
+    }
+    this.mouseOnPlayhead = false;
+  };
+
+  movePlayhead = event => {
+    const { left, width: timelineWidth } = this.getPosition(this.timeline);
+    const { duration } = this.state;
+    var newMargLeft = event.clientX - left;
+    let playheadPosition = newMargLeft;
+
+    if (newMargLeft < 0) {
+      playheadPosition = 0;
+    }
+    if (newMargLeft > timelineWidth) {
+      playheadPosition = timelineWidth;
+    }
+
+    this.setState({
+      playheadPosition,
+      activeTimelineWidth: playheadPosition,
+      currentDuration: this.formatTime(
+        this.duration * (newMargLeft / timelineWidth)
+      )
+    });
+  };
+
+  setTimelineRef = _ref => {
+    this.timeline = _ref;
+    this.timeline.addEventListener("click", this.handleTimelineClick, false);
+  };
+
+  setPlayheadRef = _ref => {
+    this.playhead = _ref;
+    this.playhead.addEventListener("mousedown", this.mouseDown, false);
+  };
+
   render() {
-    const { isPlaying } = this.state;
+    const {
+      isPlaying,
+      playheadPosition,
+      activeTimelineWidth,
+      currentDuration,
+      totalDuration
+    } = this.state;
 
     return (
       <div styleName="AudioPlayer">
@@ -73,13 +159,21 @@ class AudioPlayer extends Component {
             </div>
             <div styleName="AudioPlayer__timeline-container">
               <div styleName="AudioPlayer__playback-time AudioPlayer__playback-time__left AudioPlayer__control">
-                00:14
+                {currentDuration}
               </div>
-              <div styleName="AudioPlayer__timeline">
-                <div styleName="AudioPlayer__playhead" />
+              <div styleName="AudioPlayer__timeline" ref={this.setTimelineRef}>
+                <div
+                  styleName="AudioPlayer__timeline__current"
+                  style={{ width: activeTimelineWidth }}
+                />
+                <div
+                  styleName="AudioPlayer__playhead"
+                  ref={this.setPlayheadRef}
+                  style={{ left: playheadPosition }}
+                />
               </div>
               <div styleName="AudioPlayer__playback-time AudioPlayer__playback-time__right AudioPlayer__control">
-                03:13
+                {totalDuration}
               </div>
             </div>
             <audio src={this.props.src} preload="true" />
