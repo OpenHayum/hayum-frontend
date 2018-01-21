@@ -1,12 +1,19 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { Link } from "react-router-dom";
 
 import styles from "./navMenu.scss";
 
 const NavMenu = ({ to, text, children, className, onClick }) => (
-  <div styleName="NavMenu" className={className} onClick={onClick}>
+  <div
+    className={className}
+    styleName={classnames("NavMenu", {
+      NavMenu__active: to === window.location.pathname
+    })}
+    onClick={onClick}
+  >
     <Link to={to}>{text ? text : children}</Link>
   </div>
 );

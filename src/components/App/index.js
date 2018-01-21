@@ -15,6 +15,7 @@ class App extends Component {
     changeBackground: PropTypes.func.isRequired,
     background: PropTypes.string.isRequired
   };
+
   constructor(props) {
     super(props);
     this.state = {};

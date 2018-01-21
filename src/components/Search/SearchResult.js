@@ -7,8 +7,10 @@ import styles from "./result.scss";
 
 const SearchResult = ({ result }) => {
   return (
-    <div>
-      {result.map(item => <ListItem key={item.name}>{item.name}</ListItem>)}
+    <div styleName="SearchResult">
+      {result.map((item, index) => (
+        <ListItem key={item.name} data={item} position={index} />
+      ))}
     </div>
   );
 };

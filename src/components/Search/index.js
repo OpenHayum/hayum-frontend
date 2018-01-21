@@ -19,8 +19,12 @@ class Search extends Component {
     };
   }
 
-  handleEnterKeyDown = ({ target, keyCode }) => {
-    if (keyCode !== 13) return;
+  handleEnterKeyDown = e => {
+    if (e.keyCode !== 13) return;
+    this.handleChange(e);
+  };
+
+  handleChange = ({ target }) => {
     const { name, value } = target;
     const valueRegex = new RegExp(value, "i");
     const result = mockData.filter(
@@ -45,6 +49,7 @@ class Search extends Component {
             placeholder="Start typing and press enter..."
             autoComplete="off"
             onKeyDown={this.handleEnterKeyDown}
+            onChange={this.handleChange}
           />
         </div>
         <div styleName="Search__result">

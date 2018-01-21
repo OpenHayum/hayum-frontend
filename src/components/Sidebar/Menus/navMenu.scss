@@ -1,6 +1,12 @@
 @import "~Styles/settings.scss";
 $border: 1px solid rgba(214, 214, 214, 0.082);
 
+%active-hover {
+  color: $main-green-color !important;
+  font-weight: bold !important;
+  background-color: rgba(0, 0, 0, 0.062);
+}
+
 .NavMenu {
   background-color: rgba(89, 66, 66, 0.027);
   border-bottom: $border;
@@ -25,6 +31,14 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
     i {
       font-size: $font-sm;
       margin-right: 10px;
+    }
+  }
+  &__active {
+    a {
+      @extend %active-hover;
+      &:hover {
+        @extend %active-hover;
+      }
     }
   }
 }
