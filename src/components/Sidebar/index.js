@@ -5,10 +5,13 @@ import PropTypes from "prop-types";
 
 import NavMenu from "./Menus/NavMenu";
 import Menus from "./Menus";
+import getBGColor from "../../utils/backgroundColorGenerator";
 import styles from "./sidebar.scss";
 
 class Sidebar extends Component {
-  static propTypes = {};
+  static propTypes = {
+    changeBackground: PropTypes.func.isRequired
+  };
 
   static defaultProps = {};
 
@@ -17,19 +20,29 @@ class Sidebar extends Component {
     this.state = {};
   }
 
+  handleMenuClick = ({ target }) => {
+    this.props.changeBackground({
+      background: getBGColor()
+    });
+  };
+
   render() {
     return (
       <div styleName="Sidebar">
         <div styleName="Sidebar__logo">
           <div />
         </div>
-        <NavMenu to="/search" className={styles.Sidebar__search}>
+        <NavMenu
+          to="/search"
+          className={styles.Sidebar__search}
+          onClick={this.handleMenuClick}
+        >
           <span>Search</span>
           <span>
             <i className="icon-magnifier" />
           </span>
         </NavMenu>
-        <Menus />
+        <Menus onClick={this.handleMenuClick} />
         <div styleName="Sidebar__footer">
           <i className="icon-user" />
           <span>RedJohn</span>

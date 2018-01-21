@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 import styles from "./navMenu.scss";
 
-const NavMenu = ({ to, text, children, className }) => (
-  <div styleName="NavMenu" className={className}>
+const NavMenu = ({ to, text, children, className, onClick }) => (
+  <div styleName="NavMenu" className={className} onClick={onClick}>
     <Link to={to}>{text ? text : children}</Link>
   </div>
 );
@@ -15,14 +15,16 @@ NavMenu.propTypes = {
   to: PropTypes.string,
   className: PropTypes.string,
   text: PropTypes.string,
-  children: PropTypes.any
+  children: PropTypes.any,
+  onClick: PropTypes.func
 };
 
 NavMenu.defaultProps = {
   to: "/",
   text: "",
   className: "",
-  children: null
+  children: null,
+  onClick: () => null
 };
 
 export default CSSModules(NavMenu, styles, { allowMultiple: true });

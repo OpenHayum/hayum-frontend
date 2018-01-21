@@ -13,10 +13,13 @@ class Menus extends Component {
         linkTo: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired
       })
-    )
+    ),
+    onClick: PropTypes.func
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    onClick: () => null
+  };
 
   constructor(props) {
     super(props);
@@ -24,10 +27,10 @@ class Menus extends Component {
   }
 
   render() {
-    const { menusData } = this.props;
+    const { menusData, onClick } = this.props;
 
     return (
-      <nav styleName="Menus">
+      <nav styleName="Menus" onClick={onClick}>
         <NavMenu to="/" text="Home" />
         <NavMenu to="/music" text="Music" />
         <NavMenu to="/music/old" text="Ariba Esei" />

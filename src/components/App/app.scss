@@ -13,11 +13,8 @@
 
 $color: blue;
 
-$background-1: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
-$background-2: linear-gradient(#aa6962, #4a3242 85%);
-
 .hayum {
-  background: $background-2;
+  background: transparent;
   overflow: hidden;
   min-width: 900px;
   @extend %npfh;
