@@ -22,14 +22,20 @@ class AudioPlayer extends Component {
       <div styleName="AudioPlayer">
         <div styleName="AudioPlayer__container">
           <div styleName="AudioPlayer__container__controls">
-            <button styleName="AudioPlayer__icon AudioPlayer__control">
+            <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__right-spacing">
+              <i className="icon-shuffle" />
+            </button>
+            <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__right-spacing">
               <i className="icon-control-start" />
             </button>
             <button styleName="AudioPlayer__icon AudioPlayer__circle AudioPlayer__control">
               <i className="icon-control-play" />
             </button>
-            <button styleName="AudioPlayer__icon AudioPlayer__control">
+            <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__left-spacing">
               <i className="icon-control-end" />
+            </button>
+            <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__left-spacing">
+              <i className="icon-loop" />
             </button>
           </div>
           <div styleName="AudioPlayer__timeline-container">

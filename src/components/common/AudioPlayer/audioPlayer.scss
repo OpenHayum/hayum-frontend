@@ -1,9 +1,17 @@
+$spacing-controls: 20px;
+
 .AudioPlayer {
   button {
     background: transparent;
     border: none;
   }
   display: block;
+  &__right-spacing {
+    margin-right: $spacing-controls;
+  }
+  &__left-spacing {
+    margin-left: $spacing-controls;
+  }
   &__icon {
     width: 32px;
     height: 32px;
@@ -11,7 +19,6 @@
   &__circle {
     border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
     border-radius: 50%;
-    margin: 0 20px;
     i {
       margin-left: 4px;
       line-height: 2;
@@ -22,7 +29,7 @@
     width: 300px;
     &__controls {
       margin: 10px auto;
-      width: 136px;
+      width: 240px;
       margin-bottom: 16px;
     }
   }
