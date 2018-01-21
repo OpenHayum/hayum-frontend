@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 
 import CoverArt from "../CoverArt";
 import styles from "./audioPlayer.scss";
+
+const controlNames = {
+  IS_PLAYING: "isPlaying"
+};
 
 class AudioPlayer extends Component {
   static propTypes = {
@@ -16,10 +21,21 @@ class AudioPlayer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isPlaying: false
+    };
   }
 
+  handleControlClick = ({ target }) => {
+    console.log(target.name, this.state.isPlaying);
+    this.setState({
+      [target.name]: !this.state.isPlaying
+    });
+  };
+
   render() {
+    const { isPlaying } = this.state;
+
     return (
       <div styleName="AudioPlayer">
         <div styleName="AudioPlayer__item">
@@ -38,9 +54,16 @@ class AudioPlayer extends Component {
               <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__right-spacing">
                 <i className="icon-control-start" />
               </button>
-              <button styleName="AudioPlayer__icon AudioPlayer__circle AudioPlayer__control">
-                <i className="icon-control-play" />
-              </button>
+              <button
+                name={controlNames.IS_PLAYING}
+                styleName={classnames(
+                  "AudioPlayer__icon AudioPlayer__circle AudioPlayer__control",
+                  {
+                    "AudioPlayer__circle--active AudioPlayer__circle--pause": isPlaying
+                  }
+                )}
+                onClick={this.handleControlClick}
+              />
               <button styleName="AudioPlayer__icon AudioPlayer__control AudioPlayer__left-spacing">
                 <i className="icon-control-end" />
               </button>
