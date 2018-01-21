@@ -1,12 +1,12 @@
 .CoverArt {
   width: 64px;
   height: 64px;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.37);
   background: rgba(0, 0, 0, 0.2);
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   i {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.747);
   }
 }

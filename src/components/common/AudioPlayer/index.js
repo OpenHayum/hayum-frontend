@@ -25,8 +25,8 @@ class AudioPlayer extends Component {
         <div styleName="AudioPlayer__item">
           <CoverArt />
           <div styleName="AudioPlayer__item__details">
-            <h4>Loktak Ema</h4>
-            <h4>Ranbir</h4>
+            <h4 styleName="AudioPlayer__item__details__name">Loktak Ema</h4>
+            <h4 styleName="AudioPlayer__item__details__artist">Ranbir</h4>
           </div>
         </div>
         <div styleName="AudioPlayer__container">

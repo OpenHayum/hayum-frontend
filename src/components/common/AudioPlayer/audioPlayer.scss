@@ -1,3 +1,5 @@
+@import "~Styles/settings.scss";
+
 $spacing-controls: 20px;
 
 .AudioPlayer {
@@ -19,7 +21,15 @@ $spacing-controls: 20px;
       vertical-align: middle;
       padding-left: 16px;
       h4 {
-        color: #a0a0a0;
+        font-weight: 200;
+      }
+      &__name {
+        font-size: 14px;
+        color: rgb(212, 212, 212);
+      }
+      &__artist {
+        color: $text-darker;
+        font-size: 12px;
       }
     }
   }
@@ -59,10 +69,26 @@ $spacing-controls: 20px;
   &__icon {
     width: 32px;
     height: 32px;
+    transition-property: color;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(1, 0, 0.7, 1);
+    &:hover {
+      color: #fff;
+    }
   }
   &__circle {
     border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
     border-radius: 50%;
+    transition-duration: 50ms;
+    transition: none 33ms cubic-bezier(0.3, 0, 0.7, 1);
+    transition-property: all;
+    &:hover {
+      border-color: #fff !important;
+      transition-duration: 66ms;
+      transition: none 33ms cubic-bezier(0.3, 0, 0, 1);
+      transition-property: all;
+      transform: scale(1.06);
+    }
     i {
       margin-left: 4px;
       line-height: 2;
@@ -99,8 +125,10 @@ $spacing-controls: 20px;
     border-radius: 2px;
     height: 4px;
     width: 100%;
+    cursor: pointer;
   }
   &__playhead {
+    cursor: pointer;
     transition-property: transform;
     transition-duration: 0.1s;
     transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
