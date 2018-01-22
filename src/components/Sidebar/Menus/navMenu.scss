@@ -33,6 +33,7 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
     }
   }
   &__active {
+    border-left: 2px solid rgba(0, 175, 150, 0.84);
     a {
       @extend %active-hover;
       &:hover {

@@ -8,6 +8,7 @@ import classNames from "classnames";
 import Sidebar from "../Sidebar";
 import Search from "../Search";
 import AudioPlayer from "../common/AudioPlayer";
+import Home from "../Home";
 import { bounceTransition } from "../../utils/router.animated";
 import styles from "./app.scss";
 
@@ -35,6 +36,12 @@ class App extends Component {
             exact
             path="/search"
             component={Search}
+          />
+          <AnimatedRoute
+            {...bounceTransition}
+            exact
+            path="/"
+            component={Home}
           />
         </div>
         <div styleName="hayum__player">

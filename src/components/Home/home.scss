@@ -1,0 +1,12 @@
+.Home {
+  color: aliceblue;
+  height: 100%;
+  &__grid {
+    color: azure;
+    border: 1px solid transparent;
+    height: 300px;
+    padding: 20px;
+    background: url("Images/coverart.jpeg") no-repeat center;
+    background-size: contain;
+  }
+}
