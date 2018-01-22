@@ -29,6 +29,7 @@ $color: blue;
   }
   &__main {
     @extend %npfh;
+    overflow-y: scroll;
   }
   &__player {
     position: fixed;
