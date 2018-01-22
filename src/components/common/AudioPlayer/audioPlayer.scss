@@ -153,16 +153,14 @@ $spacing-controls: 20px;
   &__playhead {
     cursor: pointer;
     transition-property: all;
-    transition-duration: 0.15s;
+    transition-duration: 80ms;
     transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
-    transform: scale(1);
     background-color: #fff;
     border-radius: 50%;
     width: 12px;
     height: 12px;
     margin-left: -6px;
     margin-top: -8px;
-    z-index: 100;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     position: absolute;
     left: 100px;
@@ -172,6 +170,7 @@ $spacing-controls: 20px;
     min-width: 40px;
     width: 40px;
     top: -8px;
+    user-select: none;
     &__left {
       left: -45px;
     }

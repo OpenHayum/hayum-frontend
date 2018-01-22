@@ -20,7 +20,7 @@ $color: blue;
   @extend %npfh;
   &__sidebar {
     @extend %npfh;
-    background: rgba(0, 0, 0, 0.28);
+    background: rgba(0, 0, 0, 0.45);
     color: hsla(0, 0%, 100%, 0.6);
     &--is-mobile {
       position: relative;

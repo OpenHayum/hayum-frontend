@@ -98,7 +98,7 @@ class AudioPlayer extends Component {
       playheadPosition,
       activeTimelineWidth: playheadPosition,
       currentDuration: this.formatTime(
-        this.duration * (newMargLeft / timelineWidth)
+        this.duration * (playheadPosition / timelineWidth)
       )
     });
   };
