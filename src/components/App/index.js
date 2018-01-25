@@ -9,6 +9,7 @@ import Sidebar from "../Sidebar";
 import Search from "../Search";
 import AudioPlayer from "../common/AudioPlayer";
 import Home from "../Home";
+import Music from "../Music";
 import { bounceTransition } from "../../utils/router.animated";
 import styles from "./app.scss";
 
@@ -42,6 +43,12 @@ class App extends Component {
             exact
             path="/"
             component={Home}
+          />
+          <AnimatedRoute
+            {...bounceTransition}
+            exact
+            path="/music"
+            component={Music}
           />
         </div>
         <div styleName="hayum__player">

@@ -1,0 +1,11 @@
+.Music {
+  height: 100%;
+  margin: 10px 50px;
+  margin-bottom: 80px;
+  &__grid {
+    border: 1px solid transparent;
+    height: 250px;
+    padding: 0;
+    margin-top: 20px;
+  }
+}
