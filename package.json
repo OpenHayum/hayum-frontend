@@ -29,7 +29,11 @@
     "backpack:build": "NODE_ENV=production backpack build",
     "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
     "build:all": "yarn run cra:build && yarn run backpack:build",
-    "build:start": "yarn run build:all && yarn run server:start"
+    "build:start": "yarn run build:all && yarn run server:start",
+    "heroku-prebuild":
+      "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild":
+      "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; yarn run build:all"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
