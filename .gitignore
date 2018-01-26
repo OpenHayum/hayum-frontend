@@ -20,3 +20,4 @@ yarn-error.log*
 .history
 src/static/test.mp3
 .idea
+build/
