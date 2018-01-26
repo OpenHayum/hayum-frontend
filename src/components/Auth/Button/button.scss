@@ -1,0 +1,14 @@
+@import "~Styles/settings.scss";
+
+.Button {
+  min-width: 150px;
+  background: transparent;
+  border: 1px solid $text-main;
+  outline: none;
+  color: $color-text-lighter;
+  padding: 8px 0;
+  border-radius: 25px;
+  &:hover {
+    color: $color-text-lighter-hover;
+  }
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import cssModules from "react-css-modules";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import NavMenu from "./Menus/NavMenu";
 import Menus from "./Menus";
@@ -44,8 +45,10 @@ class Sidebar extends Component {
         </NavMenu>
         <Menus onClick={this.handleMenuClick} />
         <div styleName="Sidebar__footer">
-          <i className="icon-user" />
-          <span>RedJohn</span>
+          <Link to="/auth">
+            <i className="icon-user" />
+            <span>RedJohn</span>
+          </Link>
         </div>
       </div>
     );

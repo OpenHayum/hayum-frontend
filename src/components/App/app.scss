@@ -30,6 +30,12 @@ $color: blue;
   &__main {
     @extend %npfh;
     overflow-y: scroll;
+    > div {
+      @extend %full-height;
+      > div {
+        @extend %full-height;
+      }
+    }
   }
   &__player {
     position: fixed;
