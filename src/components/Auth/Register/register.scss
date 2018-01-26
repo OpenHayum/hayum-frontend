@@ -1,0 +1,28 @@
+@import "~Styles/settings.scss";
+
+.Register {
+  width: 400px;
+  user-select: none;
+  &__input__group {
+    display: flex;
+    > div {
+      margin: 0;
+      &:last-child {
+        margin-left: 16px;
+      }
+    }
+  }
+  &__input {
+    margin: 32px 0;
+    flex: 1;
+    label {
+      color: rgba(240, 240, 240, 0.795);
+      letter-spacing: 1px;
+      font-weight: 400;
+      cursor: pointer;
+      input {
+        margin-right: 8px;
+      }
+    }
+  }
+}

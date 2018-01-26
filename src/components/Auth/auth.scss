@@ -16,15 +16,24 @@
     background: rgba(0, 0, 0, 0.801);
     &__nav {
       display: flex;
+      margin-bottom: 32px;
       &__header {
-        padding: 8px 16px;
         border-bottom: 2px solid transparent;
-        color: $color-text-darker;
         margin-right: 16px;
-        cursor: pointer;
-        letter-spacing: 1px;
         flex: 1;
-        transition: all 0.1s ease-in;
+        a {
+          padding: 8px 16px;
+          width: 100%;
+          color: $color-text-darker;
+          cursor: pointer;
+          letter-spacing: 1px;
+          transition: all 0.1s ease-in;
+          text-decoration: none;
+          display: block;
+          &:hover {
+            color: $color-text-lighter;
+          }
+        }
         &:last-child {
           margin: 0;
         }
@@ -37,6 +46,9 @@
           transition: all 0.1s ease-in;
           border-bottom: 2px solid $color-text-lighter;
           color: $color-text-lighter;
+          a {
+            color: $color-text-lighter;
+          }
         }
       }
     }

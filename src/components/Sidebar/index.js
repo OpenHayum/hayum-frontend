@@ -45,7 +45,7 @@ class Sidebar extends Component {
         </NavMenu>
         <Menus onClick={this.handleMenuClick} />
         <div styleName="Sidebar__footer" onClick={this.handleMenuClick}>
-          <Link to="/auth">
+          <Link to="/auth/login">
             {/* <i className="icon-user" /> */}
             Sign In or Register
           </Link>

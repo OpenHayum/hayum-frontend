@@ -36,10 +36,10 @@ class App extends Component {
         </div>
         <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
           <AnimatedSwitch {...bounceTransition}>
-            <Route exact path="/search" component={Search} />
+            <Route path="/search" component={Search} />
             <Route exact path="/" component={Home} />
-            <Route exact path="/music" component={Music} />
-            <Route exact path="/auth" component={Auth} />
+            <Route path="/music" component={Music} />
+            <Route path="/auth" component={Auth} />
           </AnimatedSwitch>
         </div>
         <div styleName="hayum__player">

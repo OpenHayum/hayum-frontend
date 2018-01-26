@@ -7,7 +7,7 @@ const Input = ({ label, ...restprops }) => (
   <div styleName="Input">
     <h5>{label}</h5>
     <input
-      autocomplete="off"
+      autoComplete="off"
       type="text"
       placeholder="Type here..."
       {...restprops}
