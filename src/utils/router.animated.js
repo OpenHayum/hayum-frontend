@@ -18,12 +18,12 @@ export const bounceTransition = {
   // start in a transparent, upscaled state
   atEnter: {
     opacity: 0,
-    scale: 1.2
+    scale: 2
   },
   // leave in a transparent, downscaled state
   atLeave: {
     opacity: bounce(0),
-    scale: bounce(0.8)
+    scale: bounce(0.2)
   },
   // and rest at an opaque, normally-scaled state
   atActive: {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import cssModules from "react-css-modules";
 import PropTypes from "prop-types";
-import { Route } from "react-router-dom";
-import { AnimatedSwitch } from "react-router-transition";
+import { Switch } from "react-router-dom";
+import { AnimatedRoute } from "react-router-transition";
 import classNames from "classnames";
 
 import Sidebar from "../Sidebar";
@@ -35,12 +35,29 @@ class App extends Component {
           <Sidebar changeBackground={changeBackground} />
         </div>
         <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
-          <AnimatedSwitch {...bounceTransition}>
-            <Route path="/search" component={Search} />
-            <Route exact path="/" component={Home} />
-            <Route path="/music" component={Music} />
-            <Route path="/auth" component={Auth} />
-          </AnimatedSwitch>
+          <Switch>
+            <AnimatedRoute
+              {...bounceTransition}
+              path="/search"
+              component={Search}
+            />
+            <AnimatedRoute
+              {...bounceTransition}
+              exact
+              path="/"
+              component={Home}
+            />
+            <AnimatedRoute
+              {...bounceTransition}
+              path="/music"
+              component={Music}
+            />
+            <AnimatedRoute
+              {...bounceTransition}
+              path="/auth"
+              component={Auth}
+            />
+          </Switch>
         </div>
         <div styleName="hayum__player">
           <AudioPlayer />
