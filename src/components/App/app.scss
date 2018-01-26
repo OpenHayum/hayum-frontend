@@ -14,10 +14,11 @@
 $color: blue;
 
 .hayum {
-  background: transparent;
   overflow: hidden;
   min-width: 900px;
   @extend %npfh;
+  // background: url("Images/abs-guitar.jpg") no-repeat center;
+  // background-size: cover;
   &__sidebar {
     @extend %npfh;
     background: rgba(0, 0, 0, 0.45);

@@ -44,10 +44,10 @@ class Sidebar extends Component {
           </span>
         </NavMenu>
         <Menus onClick={this.handleMenuClick} />
-        <div styleName="Sidebar__footer">
+        <div styleName="Sidebar__footer" onClick={this.handleMenuClick}>
           <Link to="/auth">
-            <i className="icon-user" />
-            <span>RedJohn</span>
+            {/* <i className="icon-user" /> */}
+            Sign In or Register
           </Link>
         </div>
       </div>

@@ -1,7 +1,47 @@
+@import "~Styles/settings.scss";
+
 .Auth {
   height: 90%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("Images/abs-guitar.jpg") no-repeat center;
+  background-size: cover;
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.603);
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.801);
+    &__nav {
+      display: flex;
+      &__header {
+        padding: 8px 16px;
+        border-bottom: 2px solid transparent;
+        color: $color-text-darker;
+        margin-right: 16px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        flex: 1;
+        transition: all 0.1s ease-in;
+        &:last-child {
+          margin: 0;
+        }
+        &:hover {
+          border-bottom: 2px solid $color-text-lighter;
+          color: $color-text-lighter;
+          transition: all 0.1s ease-in;
+        }
+        &--active {
+          transition: all 0.1s ease-in;
+          border-bottom: 2px solid $color-text-lighter;
+          color: $color-text-lighter;
+        }
+      }
+    }
+    &__content {
+      display: block;
+    }
+  }
 }

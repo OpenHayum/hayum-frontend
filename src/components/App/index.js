@@ -12,6 +12,7 @@ import Home from "../Home";
 import Music from "../Music";
 import Auth from "../Auth";
 import { bounceTransition } from "../../utils/router.animated";
+import guitarBGImage from "../../static/images/abs-guitar.jpg";
 import styles from "./app.scss";
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
 
   render() {
     const { changeBackground, background } = this.props;
+
     return (
       <div className="container-fluid" styleName="hayum" style={{ background }}>
         <div className="col-lg-2 col-md-3 col-sm-3" styleName="hayum__sidebar">
