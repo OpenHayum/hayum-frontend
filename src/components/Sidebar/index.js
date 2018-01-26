@@ -27,7 +27,16 @@ class Sidebar extends Component {
     });
   };
 
+  handleAuthClick = ({ target }) => {
+    this.props.changeBackground({
+      bgImageClassName: "auth-bg-image",
+      background: null
+    });
+  };
+
   render() {
+    const { pathname } = window.location;
+
     return (
       <div styleName="Sidebar">
         <div styleName="Sidebar__logo">
@@ -44,7 +53,13 @@ class Sidebar extends Component {
           </span>
         </NavMenu>
         <Menus onClick={this.handleMenuClick} />
-        <div styleName="Sidebar__footer" onClick={this.handleMenuClick}>
+        <div
+          styleName={classNames("Sidebar__footer", {
+            "Sidebar__footer--active":
+              pathname === "/auth/login" || pathname === "/auth/register"
+          })}
+          onClick={this.handleAuthClick}
+        >
           <Link to="/auth/login">
             {/* <i className="icon-user" /> */}
             Sign In or Register

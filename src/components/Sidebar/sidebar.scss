@@ -49,5 +49,10 @@
     a {
       color: $color-text-lighter;
     }
+    &--active {
+      a {
+        color: #01c7ab;
+      }
+    }
   }
 }

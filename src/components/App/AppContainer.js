@@ -5,7 +5,8 @@ import { changeBackground } from "./appActions";
 import App from "./index";
 
 const mapStateToProps = ({ app }) => ({
-  background: app.background
+  background: app.background,
+  bgImageClassName: app.bgImageClassName
 });
 
 const mapDispatchToProps = dispatch =>

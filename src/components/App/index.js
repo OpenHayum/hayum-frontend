@@ -14,6 +14,7 @@ import Auth from "../Auth";
 import { bounceTransition } from "../../utils/router.animated";
 import guitarBGImage from "../../static/images/abs-guitar.jpg";
 import styles from "./app.scss";
+import "./app.css";
 
 class App extends Component {
   static propTypes = {
@@ -27,10 +28,16 @@ class App extends Component {
   }
 
   render() {
-    const { changeBackground, background } = this.props;
+    const { changeBackground, background, bgImageClassName } = this.props;
 
     return (
-      <div className="container-fluid" styleName="hayum" style={{ background }}>
+      <div
+        className={`container-fluid ${
+          bgImageClassName ? bgImageClassName : ""
+        }`}
+        styleName="hayum"
+        style={{ background }}
+      >
         <div className="col-lg-2 col-md-3 col-sm-3" styleName="hayum__sidebar">
           <Sidebar changeBackground={changeBackground} />
         </div>
