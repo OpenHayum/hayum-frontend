@@ -20,7 +20,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "npm run build:all && npm run server:start",
+    "start": "yarn run server:start",
     "cra:start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
@@ -29,7 +29,8 @@
     "backpack:build": "NODE_ENV=production backpack build",
     "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
     "build:all": "yarn run build && yarn run backpack:build",
-    "build:start": "yarn run build:all && yarn run server:start"
+    "build:start": "yarn run build:all && yarn run server:start",
+    "heroku-postbuild": "yarn run build:all"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
