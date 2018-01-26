@@ -290,19 +290,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var debug = __WEBPACK_IMPORTED_MODULE_3_debug___default()('HAYUM: server');
+var debug = __WEBPACK_IMPORTED_MODULE_3_debug___default()("HAYUM: server");
 var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
 
 app.use(__WEBPACK_IMPORTED_MODULE_1_body_parser___default.a.json());
 
-app.use(__WEBPACK_IMPORTED_MODULE_5_morgan___default()('combined'));
+app.use(__WEBPACK_IMPORTED_MODULE_5_morgan___default()("combined"));
 // Serve static assets
-app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static(__WEBPACK_IMPORTED_MODULE_2_path___default.a.resolve(__dirname, '..', 'build')));
+app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static(__WEBPACK_IMPORTED_MODULE_2_path___default.a.resolve(__dirname, "..", "build")));
 
-app.use('/api', __WEBPACK_IMPORTED_MODULE_4__controllers__["a" /* default */]);
+app.use("/api", __WEBPACK_IMPORTED_MODULE_4__controllers__["a" /* default */]);
 
-app.use('/', function (req, res) {
-  var filePath = __WEBPACK_IMPORTED_MODULE_2_path___default.a.resolve(__dirname, '..', 'build', 'index.html');
+app.use("/", function (req, res) {
+  var filePath = __WEBPACK_IMPORTED_MODULE_2_path___default.a.resolve(__dirname, "..", "build", "index.html");
   res.sendFile(filePath);
 });
 
@@ -310,10 +310,10 @@ app.use(function (req, res, next) {
   next(Object(__WEBPACK_IMPORTED_MODULE_8__errors__["notFound"])());
 });
 
-if (app.get('env') === 'development') {
+if (app.get("env") === "development") {
   app.use(function (err, req, res) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render("error", {
       message: err.message,
       error: err
     });
@@ -322,18 +322,18 @@ if (app.get('env') === 'development') {
 
 app.use(function (err, req, res) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render("error", {
     message: err.message,
     error: {}
   });
 });
 
-app.listen(__WEBPACK_IMPORTED_MODULE_7__config_hayum_config__["port"], function (error) {
+app.listen(process.env.PORT || __WEBPACK_IMPORTED_MODULE_7__config_hayum_config__["port"], function (error) {
   __WEBPACK_IMPORTED_MODULE_6__config_mongo_config___default()();
   if (error) {
-    debug('error', error);
+    debug("error", error);
   }
-  debug('Listening: ', __WEBPACK_IMPORTED_MODULE_7__config_hayum_config__["port"]);
+  debug("Listening: ", __WEBPACK_IMPORTED_MODULE_7__config_hayum_config__["port"]);
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "server"))
 
