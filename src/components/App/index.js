@@ -7,12 +7,12 @@ import classNames from "classnames";
 
 import Sidebar from "../Sidebar";
 import Search from "../Search";
-import AudioPlayer from "../common/AudioPlayer";
+import AudioPlayer from "Common/AudioPlayer";
 import Home from "../Home";
 import Music from "../Music";
 import Auth from "../Auth";
+import User from "../User";
 import { bounceTransition } from "../../utils/router.animated";
-import guitarBGImage from "../../static/images/abs-guitar.jpg";
 import styles from "./app.scss";
 import "./app.css";
 
@@ -69,6 +69,11 @@ class App extends Component {
               {...bounceTransition}
               path="/auth"
               component={Auth}
+            />
+            <AnimatedRoute
+              {...bounceTransition}
+              path="/user/:username"
+              component={User}
             />
           </Switch>
         </div>
