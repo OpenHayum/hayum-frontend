@@ -38,10 +38,16 @@ class App extends Component {
         styleName="hayum"
         style={{ background }}
       >
-        <div className="col-lg-2 col-md-3 col-sm-3" styleName="hayum__sidebar">
+        <div
+          className="col-lg-2 col-md-3 col-sm-3 col-xs-3"
+          styleName="hayum__sidebar"
+        >
           <Sidebar changeBackground={changeBackground} />
         </div>
-        <div className="col-lg-10 col-md-9 col-sm-9" styleName="hayum__main">
+        <div
+          className="col-lg-10 col-md-9 col-sm-9 col-xs-9"
+          styleName="hayum__main"
+        >
           <Switch>
             <AnimatedRoute
               {...bounceTransition}
