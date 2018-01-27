@@ -3,7 +3,7 @@ import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
 import Input from "../Input";
-import Button from "../Button";
+import Button from "../common/Button";
 import styles from "./register.scss";
 
 const Register = ({ onChange }) => (
