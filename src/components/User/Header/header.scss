@@ -4,27 +4,41 @@ $profile-image-dimension: 128px;
 
 .ProfileHeader {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
+  // background: url("Images/abs-iphone.jpg") no-repeat center;
+  // background-size: cover;
+  // background-position: 0 -280px;
+  height: 140px;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.096);
   &__image {
     display: block;
+    margin-left: 24px;
     img {
       width: $profile-image-dimension;
       height: $profile-image-dimension;
       border-radius: 50%;
+      object-fit: cover;
+      object-position: -50px;
     }
   }
   &__details {
-    display: flex;
+    margin-left: 24px;
     h5 {
       color: $color-text-darker;
       font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
     }
     &__username {
       width: auto;
       margin-right: 16px;
+      font-size: 12px;
     }
     &__fullname {
+      width: auto;
+    }
+    &__description {
       width: auto;
     }
   }

@@ -16,6 +16,27 @@ import { bounceTransition } from "../../utils/router.animated";
 import styles from "./app.scss";
 import "./app.css";
 
+const bgChangeType = {
+  COLOR: "color",
+  IMAGE: "image"
+};
+
+const bgChangeRoute = {
+  AUTH: "/auth",
+  USER: "/user"
+};
+
+const bgChangeRules = {
+  [bgChangeRoute.AUTH]: {
+    type: bgChangeType.IMAGE,
+    bgImageClassName: "auth-bg-image"
+  },
+  [bgChangeRoute.USER]: {
+    type: bgChangeType.IMAGE,
+    bgImageClassName: "user-profile-bg-image"
+  }
+};
+
 class App extends Component {
   static propTypes = {
     changeBackground: PropTypes.func.isRequired,
@@ -25,6 +46,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.lastKnownPathname = props.match.url;
   }
 
   render() {

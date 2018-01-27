@@ -53,11 +53,7 @@ class Menus extends Component {
         <NavMenu to="/leela/sumang" text="Sumang Leela" />
         <NavMenu to="/leela/radio" text="Radio Leela" />
         <NavMenu to="/nokfade" text="Nokfade" />
-        <NavMenu
-          to="/user/dragfire"
-          text="Profile"
-          onClick={this.handleUserProfileClick}
-        />
+        <NavMenu to="/user/pushparani" text="Profile" />
       </nav>
     );
   }

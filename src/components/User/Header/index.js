@@ -2,19 +2,20 @@ import React from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
-import coverart from "Images/coverart.jpeg";
+import pushparani from "Images/pushparani.jpg";
 import styles from "./header.scss";
 
 const Header = () => {
   return (
     <div styleName="ProfileHeader">
-      <div styleName="ProfileHeader__image">
-        <img src={coverart} />
-      </div>
-      <div styleName="ProfileHeader__details">
-        <h5 styleName="ProfileHeader__details__username">@dragfire</h5>
-        <h5 styleName="ProfileHeader__details__fullname">Devajit Asem</h5>
-      </div>
+      <section styleName="ProfileHeader__image">
+        <img src={pushparani} />
+      </section>
+      <section styleName="ProfileHeader__details">
+        <h5 styleName="ProfileHeader__details__username">@pushparani</h5>
+        <h5 styleName="ProfileHeader__details__fullname">Pushparani Huidrom</h5>
+        {/* <h5 styleName="ProfileHeader__details__description">Singer</h5> */}
+      </section>
     </div>
   );
 };
