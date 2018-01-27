@@ -1,0 +1,9 @@
+@import "~Styles/settings.scss";
+
+.Main {
+  display: block;
+  &__card {
+    display: block;
+    height: 180px;
+  }
+}
