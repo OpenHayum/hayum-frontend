@@ -1,0 +1,36 @@
+@import "~Styles/settings.scss";
+
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  // box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.603);
+  background: rgba(0, 0, 0, 0.062);
+  &__nav {
+    display: flex;
+    margin-bottom: 32px;
+    &__title {
+      margin-right: 16px;
+      flex: 1;
+      padding: 8px 16px;
+      width: 100%;
+      color: $color-text-darker;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: all 0.1s ease-in;
+      border-bottom: 2px solid transparent;
+      &:last-child {
+        margin: 0;
+      }
+      &:hover {
+        border-bottom: 2px solid $color-text-lighter;
+        color: $color-text-lighter;
+        transition: all 0.1s ease-in-out;
+      }
+      &--active {
+        transition: all 0.1s ease-in;
+        border-bottom: 2px solid $color-text-lighter;
+        color: $color-text-lighter;
+      }
+    }
+  }
+}

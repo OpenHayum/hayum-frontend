@@ -2,8 +2,9 @@
 
 .Main {
   display: block;
-  &__card {
-    display: block;
-    height: 180px;
+  > div {
+    > div[class^="col-"] {
+      padding: 0;
+    }
   }
 }
