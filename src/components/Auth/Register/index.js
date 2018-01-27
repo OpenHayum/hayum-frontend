@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
-import Input from "../Input";
-import Button from "../common/Button";
+import Input from "Common/Input";
+import Button from "Common/Button";
 import styles from "./register.scss";
 
 const Register = ({ onChange }) => (

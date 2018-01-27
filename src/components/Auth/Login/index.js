@@ -2,14 +2,19 @@ import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
-import Input from "../Input";
-import Button from "../Button";
+import Input from "Common/Input";
+import Button from "Common/Button";
 import styles from "./login.scss";
 
 const Login = ({ onChange }) => (
   <div styleName="Login">
     <div styleName="Login__input">
-      <Input label="USERNAME" name="username" placeholder="Enter Username or Email or Phone" onChange={onChange} />
+      <Input
+        label="USERNAME"
+        name="username"
+        placeholder="Enter Username or Email or Phone"
+        onChange={onChange}
+      />
     </div>
     <div styleName="Login__input">
       <Input
