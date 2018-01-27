@@ -21,9 +21,12 @@ class Sidebar extends Component {
     this.state = {};
   }
 
-  handleMenuClick = ({ target }) => {
-    this.props.changeBackground({
+  handleMenuClick = background => {
+    const styleObject = background || {
       background: getBGColor()
+    };
+    this.props.changeBackground({
+      ...styleObject
     });
   };
 

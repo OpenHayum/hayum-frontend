@@ -1,0 +1,30 @@
+@import "~Styles/settings.scss";
+
+$profile-image-dimension: 128px;
+
+.ProfileHeader {
+  display: flex;
+  flex-direction: column;
+  &__image {
+    display: block;
+    img {
+      width: $profile-image-dimension;
+      height: $profile-image-dimension;
+      border-radius: 50%;
+    }
+  }
+  &__details {
+    display: flex;
+    h5 {
+      color: $color-text-darker;
+      font-weight: 300;
+    }
+    &__username {
+      width: auto;
+      margin-right: 16px;
+    }
+    &__fullname {
+      width: auto;
+    }
+  }
+}

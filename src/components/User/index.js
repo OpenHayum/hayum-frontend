@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
+
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 import styles from "./user.scss";
 
 class User extends Component {
@@ -14,7 +18,19 @@ class User extends Component {
   }
 
   render() {
-    return <div />;
+    return (
+      <div className="container-fluid" styleName="User">
+        <header>
+          <Header />
+        </header>
+        <main>
+          <Main />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    );
   }
 }
 

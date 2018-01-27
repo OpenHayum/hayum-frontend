@@ -2,3 +2,8 @@
   background: url("~Images/abs-guitar.jpg") no-repeat center;
   background-size: cover;
 }
+
+.user-profile-bg-image {
+  background: url("~Images/abs-blur.jpg") no-repeat center;
+  background-size: cover;
+}

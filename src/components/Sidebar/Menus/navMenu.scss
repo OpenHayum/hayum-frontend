@@ -9,6 +9,7 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
 .NavMenu {
   background-color: rgba(89, 66, 66, 0.027);
   border-bottom: $border;
+  transition: all 0.1s ease-out;
   &:first-child {
     border-top: $border;
   }
@@ -34,6 +35,7 @@ $border: 1px solid rgba(214, 214, 214, 0.082);
   }
   &__active {
     border-left: 2px solid rgba(0, 175, 150, 0.84);
+    transition: all 0.1s ease-in;
     a {
       @extend %active-hover;
       &:hover {
