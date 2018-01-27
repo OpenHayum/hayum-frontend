@@ -5,6 +5,7 @@ $profile-image-dimension: 128px;
 .ProfileHeader {
   display: flex;
   flex-direction: column;
+  align-items: center;
   &__image {
     display: block;
     img {

@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import NavMenu from "./Menus/NavMenu";
+import getBGColor from "Utils/backgroundColorGenerator";
 import Menus from "./Menus";
-import getBGColor from "../../utils/backgroundColorGenerator";
 import styles from "./sidebar.scss";
 
 class Sidebar extends Component {
@@ -21,24 +21,23 @@ class Sidebar extends Component {
     this.state = {};
   }
 
-  handleMenuClick = background => {
-    const styleObject = background || {
-      background: getBGColor()
-    };
-    this.props.changeBackground({
-      ...styleObject
-    });
-  };
-
-  handleAuthClick = ({ target }) => {
+  handleAuthClick = () => {
     this.props.changeBackground({
       bgImageClassName: "auth-bg-image",
       background: null
     });
   };
 
+  handleMenuClick = () => {
+    this.props.changeBackground({
+      bgImageClassName: null,
+      background: getBGColor()
+    });
+  };
+
   render() {
     const { pathname } = window.location;
+    const { changeBackground } = this.props;
 
     return (
       <div styleName="Sidebar">
@@ -55,7 +54,7 @@ class Sidebar extends Component {
             <i className="icon-magnifier" />
           </span>
         </NavMenu>
-        <Menus onClick={this.handleMenuClick} />
+        <Menus changeBackground={changeBackground} />
         <div
           styleName={classNames("Sidebar__footer", {
             "Sidebar__footer--active":

@@ -3,6 +3,7 @@ import CSSModules from "react-css-modules";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import getBGColor from "Utils/backgroundColorGenerator";
 import NavMenu from "./NavMenu";
 import styles from "./menus.scss";
 
@@ -14,7 +15,8 @@ class Menus extends Component {
         text: PropTypes.string.isRequired
       })
     ),
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    changeBackground: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -28,9 +30,15 @@ class Menus extends Component {
 
   handleUserProfileClick = e => {
     e.stopPropagation();
-    this.props.onClick({
+    this.props.changeBackground({
       bgImageClassName: "user-profile-bg-image",
       background: null
+    });
+  };
+
+  handleMenuCLick = () => {
+    this.props.changeBackground({
+      background: getBGColor()
     });
   };
 
@@ -38,7 +46,7 @@ class Menus extends Component {
     const { menusData, onClick } = this.props;
 
     return (
-      <nav styleName="Menus" onClick={onClick}>
+      <nav styleName="Menus" onClick={this.handleMenuCLick}>
         <NavMenu to="/" text="Home" />
         <NavMenu to="/music" text="Music" />
         <NavMenu to="/music/old" text="Ariba Esei" />
