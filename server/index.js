@@ -56,5 +56,5 @@ app.listen(process.env.PORT || port, error => {
   if (error) {
     debug("error", error);
   }
-  debug("Listening: ", port);
+  debug("listening:", port);
 });
