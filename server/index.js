@@ -4,7 +4,9 @@ import path from "path";
 import debugLog from "debug";
 import controllers from "./controllers";
 import morgan from "morgan";
+import https from "https";
 import mongooseStart from "./config/mongo.config";
+import fs from "fs";
 import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
 
@@ -59,7 +61,12 @@ app.use((err, req, res) => {
   });
 });
 
-app.listen(process.env.PORT || port, error => {
+var options = {
+  key: fs.readFileSync("./ssl/private.key"),
+  cert: fs.readFileSync("./ssl/certificate.crt")
+};
+
+https.createServer(options, app).listen(process.env.PORT || 8000, error => {
   mongooseStart();
   if (error) {
     debug("error", error);
