@@ -7,8 +7,6 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
-    case HAYUM_CHANGE_BACKGROUND:
-      return { ...state, ...action.payload };
     default:
       return state;
   }

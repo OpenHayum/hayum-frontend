@@ -12,7 +12,8 @@ import Home from "../Home";
 import Music from "../Music";
 import Auth from "../Auth";
 import User from "../User";
-import { bounceTransition } from "../../utils/router.animated";
+import { bounceTransition } from "Utils/router.animated";
+import getBGColor from "Utils/backgroundColorGenerator";
 import styles from "./app.scss";
 import "./app.css";
 
@@ -27,44 +28,63 @@ const bgChangeRoute = {
 };
 
 const bgChangeRules = {
-  [bgChangeRoute.AUTH]: {
-    type: bgChangeType.IMAGE,
-    bgImageClassName: "auth-bg-image"
-  },
-  [bgChangeRoute.USER]: {
-    type: bgChangeType.IMAGE,
-    bgImageClassName: "user-profile-bg-image"
-  }
+  [bgChangeRoute.AUTH]: " auth-bg-image",
+  [bgChangeRoute.USER]: " user-profile-bg-image"
 };
 
 class App extends Component {
-  static propTypes = {
-    changeBackground: PropTypes.func.isRequired,
-    background: PropTypes.string.isRequired
-  };
+  static propTypes = {};
 
   constructor(props) {
     super(props);
     this.state = {};
+
     this.lastKnownPathname = props.match.url;
+    this.defaultHayumClassname = null;
+    this.hayum = null;
   }
 
-  render() {
-    const { changeBackground, background, bgImageClassName } = this.props;
+  componentDidMount() {
+    this.defaultHayumClassname = this.hayum.className;
+    this.changeBackground();
+  }
 
+  componentWillReceiveProps(nextProps) {
+    const { pathname } = window.location;
+    if (pathname !== this.lastKnownPathname) {
+      this.changeBackground(pathname);
+      this.lastKnownPathname = pathname;
+    }
+  }
+
+  changeBackground = () => {
+    const { pathname } = window.location;
+
+    this.hayum.style.background = null;
+
+    if (pathname.indexOf(bgChangeRoute.AUTH) !== -1) {
+      this.hayum.className =
+        this.defaultHayumClassname + bgChangeRules[bgChangeRoute.AUTH];
+    } else if (pathname.indexOf(bgChangeRoute.USER) !== -1) {
+      this.hayum.className =
+        this.defaultHayumClassname + bgChangeRules[bgChangeRoute.USER];
+    } else {
+      this.hayum.style.background = getBGColor();
+    }
+  };
+
+  setHayumRef = _ref => {
+    this.hayum = _ref;
+  };
+
+  render() {
     return (
-      <div
-        className={`container-fluid ${
-          bgImageClassName ? bgImageClassName : ""
-        }`}
-        styleName="hayum"
-        style={{ background }}
-      >
+      <div className="container-fluid" styleName="hayum" ref={this.setHayumRef}>
         <div
           className="col-lg-2 col-md-3 col-sm-3 col-xs-3"
           styleName="hayum__sidebar"
         >
-          <Sidebar changeBackground={changeBackground} />
+          <Sidebar />
         </div>
         <div
           className="col-lg-10 col-md-9 col-sm-9 col-xs-9"

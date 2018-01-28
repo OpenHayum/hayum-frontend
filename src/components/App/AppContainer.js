@@ -1,20 +1,11 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { changeBackground } from "./appActions";
 import App from "./index";
 
-const mapStateToProps = ({ app }) => ({
-  background: app.background,
-  bgImageClassName: app.bgImageClassName
-});
+// const mapStateToProps = ({ app }) => ({
+// });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      changeBackground
-    },
-    dispatch
-  );
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

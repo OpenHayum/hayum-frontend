@@ -10,9 +10,7 @@ import Menus from "./Menus";
 import styles from "./sidebar.scss";
 
 class Sidebar extends Component {
-  static propTypes = {
-    changeBackground: PropTypes.func.isRequired
-  };
+  static propTypes = {};
 
   static defaultProps = {};
 
@@ -21,46 +19,26 @@ class Sidebar extends Component {
     this.state = {};
   }
 
-  handleAuthClick = () => {
-    this.props.changeBackground({
-      bgImageClassName: "auth-bg-image",
-      background: null
-    });
-  };
-
-  handleMenuClick = () => {
-    this.props.changeBackground({
-      bgImageClassName: null,
-      background: getBGColor()
-    });
-  };
-
   render() {
     const { pathname } = window.location;
-    const { changeBackground } = this.props;
 
     return (
       <div styleName="Sidebar">
         <div styleName="Sidebar__logo">
           <div />
         </div>
-        <NavMenu
-          to="/search"
-          className={styles.Sidebar__search}
-          onClick={this.handleMenuClick}
-        >
+        <NavMenu to="/search" className={styles.Sidebar__search}>
           <span>Search</span>
           <span>
             <i className="icon-magnifier" />
           </span>
         </NavMenu>
-        <Menus changeBackground={changeBackground} />
+        <Menus />
         <div
           styleName={classNames("Sidebar__footer", {
             "Sidebar__footer--active":
               pathname === "/auth/login" || pathname === "/auth/register"
           })}
-          onClick={this.handleAuthClick}
         >
           <Link to="/auth/login">
             {/* <i className="icon-user" /> */}
