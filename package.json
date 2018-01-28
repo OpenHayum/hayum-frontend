@@ -32,7 +32,6 @@
     "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
     "build:all": "yarn run cra:build && yarn run backpack:build",
     "build:start": "yarn run build:all && yarn run server:start",
-    "heroku-prebuild": "yarn install --production=false",
     "postinstall": "yarn build:all"
   },
   "devDependencies": {
