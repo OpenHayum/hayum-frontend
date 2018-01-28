@@ -2,6 +2,17 @@
 
 .Main {
   display: block;
+  &__items {
+    height: 100%;
+    overflow-y: scroll;
+    margin-bottom: 80px;
+    &__item {
+      margin: 4px 0;
+    }
+  }
+  &__card {
+    margin: 8px;
+  }
   > div {
     > div[class^="col-"] {
       padding: 0;

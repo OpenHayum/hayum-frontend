@@ -4,10 +4,9 @@
   display: flex;
   flex-direction: column;
   // box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.603);
-  background: rgba(0, 0, 0, 0.062);
   &__nav {
     display: flex;
-    margin-bottom: 32px;
+    background: rgba(0, 0, 0, 0.062);
     &__title {
       margin-right: 16px;
       flex: 1;

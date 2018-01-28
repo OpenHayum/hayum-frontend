@@ -6,9 +6,9 @@ import styles from "./card.scss";
 const Card = () => {
   return (
     <div styleName="Card">
-      <header>Header</header>
-      <main>Header</main>
-      <footer>Footer</footer>
+      <header>Number Of Listeners</header>
+      <main>10</main>
+      <footer>Approved: 3</footer>
     </div>
   );
 };

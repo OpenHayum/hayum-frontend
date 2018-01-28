@@ -13,16 +13,68 @@ const userProfileTabTitles = {
 };
 
 const Main = () => {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   return (
     <div className="container-fluid" styleName="Main">
       <div className="row">
         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <Tabs titles={Object.values(userProfileTabTitles)}>
-            <div>Hello there!</div>
+            <div styleName="Main__items">
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+              <div styleName="Main__items__item">
+                <Card />
+              </div>
+            </div>
           </Tabs>
         </div>
-        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">There</div>
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div styleName="Main__card">
+            <Card />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styles from "./footer.scss";
 
 const Footer = () => {
-  return <div>Header</div>;
+  return <div>Footer</div>;
 };
 
 Footer.propTypes = {};
