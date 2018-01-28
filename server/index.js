@@ -16,7 +16,11 @@ app.use(bodyParser.json());
 
 app.use(morgan("combined"));
 // Serve static assets
-app.use(express.static(path.resolve(__dirname, "..", "build")));
+app.use(
+  express.static(path.resolve(__dirname, "..", "build"), {
+    maxAge: 365 * 24 * 60 * 60 * 1000
+  })
+);
 
 app.use("/api", controllers);
 
