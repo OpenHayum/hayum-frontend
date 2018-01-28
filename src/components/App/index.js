@@ -13,7 +13,9 @@ import Music from "../Music";
 import Auth from "../Auth";
 import User from "../User";
 import { bounceTransition } from "Utils/router.animated";
-import getBGColor from "Utils/backgroundColorGenerator";
+import getBGColor, {
+  userProfileBackground
+} from "Utils/backgroundColorGenerator";
 import styles from "./app.scss";
 import "./app.css";
 
@@ -28,8 +30,7 @@ const bgChangeRoute = {
 };
 
 const bgChangeRules = {
-  [bgChangeRoute.AUTH]: " auth-bg-image",
-  [bgChangeRoute.USER]: " user-profile-bg-image"
+  [bgChangeRoute.AUTH]: " auth-bg-image"
 };
 
 class App extends Component {
@@ -66,8 +67,7 @@ class App extends Component {
       this.hayum.className =
         this.defaultHayumClassname + bgChangeRules[bgChangeRoute.AUTH];
     } else if (pathname.indexOf(bgChangeRoute.USER) !== -1) {
-      this.hayum.className =
-        this.defaultHayumClassname + bgChangeRules[bgChangeRoute.USER];
+      this.hayum.style.background = userProfileBackground;
     } else {
       this.hayum.style.background = getBGColor();
     }

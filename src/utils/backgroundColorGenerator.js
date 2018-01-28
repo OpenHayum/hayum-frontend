@@ -16,6 +16,9 @@ const getIndexInRange = (end, start = 0) =>
 const bgVariantsLength = bgVariants.length;
 
 const getBGColor = () =>
-  `linear-gradient(${bgVariants[getIndexInRange(bgVariantsLength)]} 95%)`;
+  `linear-gradient(${bgVariants[getIndexInRange(bgVariantsLength)]} 85%)`;
+
+export const userProfileBackground =
+  "linear-gradient(rgba(29, 28, 28, 0.8), rgb(17, 17, 17) 85%)";
 
 export default getBGColor;
