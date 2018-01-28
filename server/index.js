@@ -17,6 +17,17 @@ app.use(morgan("combined"));
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
+const acmeChallenge = {
+  "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g":
+    "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8",
+  rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ:
+    "rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8"
+};
+app.use("/.well-known/acme-challenge/:id", (req, res) => {
+  res.contentType("text/plain");
+  res.send(acmeChallenge[req.params.id]);
+});
+
 app.use("/api", controllers);
 
 app.use("/", (req, res) => {
