@@ -32,8 +32,8 @@
     "backpack:debug": "NODE_ENV=development backpack dev $NODE_DEBUG_OPTION",
     "build:all": "yarn run cra:build && yarn run backpack:build",
     "build:start": "yarn run build:all && yarn run server:start",
-    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false NODE_ENV=development yarn install --production=false",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true NODE_ENV=production yarn run build:all"
+    "preinstall": "export NODE_ENV=development",
+    "postinstall": "export NODE_ENV=production"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
@@ -83,12 +83,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
@@ -98,11 +94,10 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -122,9 +117,7 @@
     "yarn": "1.3.2"
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"
