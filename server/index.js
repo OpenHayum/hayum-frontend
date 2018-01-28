@@ -21,7 +21,9 @@ const acmeChallenge = {
   "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g":
     "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8",
   rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ:
-    "rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8"
+    "rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8",
+  "XLmnl5_XKDwHgPoyL4b--sFfKhYh1zNnN9joGfeXTV8":
+    "XLmnl5_XKDwHgPoyL4b--sFfKhYh1zNnN9joGfeXTV8.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8"
 };
 app.use("/.well-known/acme-challenge/:id", (req, res) => {
   res.contentType("text/plain");
