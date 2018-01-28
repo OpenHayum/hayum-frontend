@@ -4,9 +4,8 @@ import path from "path";
 import debugLog from "debug";
 import controllers from "./controllers";
 import morgan from "morgan";
-import https from "https";
+import http from "http";
 import mongooseStart from "./config/mongo.config";
-import fs from "fs";
 import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
 
@@ -18,19 +17,6 @@ app.use(bodyParser.json());
 app.use(morgan("combined"));
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
-
-const acmeChallenge = {
-  "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g":
-    "3lUgV7I6sAEoJnejPONqqEAiaXVbFWN83LEaAJ9-P7g.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8",
-  rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ:
-    "rf7rVkK4BnqivNPbP0qS71rTHC1qWiBvlvGQ9L7s_YQ.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8",
-  "XLmnl5_XKDwHgPoyL4b--sFfKhYh1zNnN9joGfeXTV8":
-    "XLmnl5_XKDwHgPoyL4b--sFfKhYh1zNnN9joGfeXTV8.LsVJrtWlEdYWJuhHixHq3g325IeBpFHPnNzyjp2RcL8"
-};
-app.use("/.well-known/acme-challenge/:id", (req, res) => {
-  res.contentType("text/plain");
-  res.send(acmeChallenge[req.params.id]);
-});
 
 app.use("/api", controllers);
 
@@ -61,12 +47,7 @@ app.use((err, req, res) => {
   });
 });
 
-var options = {
-  key: fs.readFileSync("./ssl/private.key"),
-  cert: fs.readFileSync("./ssl/certificate.crt")
-};
-
-https.createServer(options, app).listen(process.env.PORT || 8000, error => {
+app.listen(process.env.PORT || port, error => {
   mongooseStart();
   if (error) {
     debug("error", error);
