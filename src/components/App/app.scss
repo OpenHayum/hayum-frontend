@@ -1,3 +1,5 @@
+@import "~Styles/bg-variants.scss";
+
 %no-padding {
   padding: 0;
 }
@@ -19,6 +21,7 @@ $color: blue;
   @extend %npfh;
   // background: url("Images/abs-guitar.jpg") no-repeat center;
   // background-size: cover;
+  @include populate-bg-variants();
   &__sidebar {
     @extend %npfh;
     background: rgba(0, 0, 0, 0.45);

@@ -223,7 +223,7 @@ module.exports = {
                       modules: true,
                       minimize: true,
                       importLoaders: 1,
-                      localIdentName: "[hash:base64:8]"
+                      localIdentName: "[name]__[local]--[hash:base64:8]"
                     }
                   },
                   {

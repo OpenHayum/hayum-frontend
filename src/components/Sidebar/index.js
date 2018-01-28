@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import NavMenu from "./Menus/NavMenu";
-import getBGColor from "Utils/backgroundColorGenerator";
 import Menus from "./Menus";
 import styles from "./sidebar.scss";
 

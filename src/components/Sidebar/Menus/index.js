@@ -3,7 +3,6 @@ import CSSModules from "react-css-modules";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import getBGColor from "Utils/backgroundColorGenerator";
 import NavMenu from "./NavMenu";
 import styles from "./menus.scss";
 

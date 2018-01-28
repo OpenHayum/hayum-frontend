@@ -13,3 +13,6 @@ export const isMobileDevice = () => {
   })(window.navigator.userAgent || window.navigator.vendor || window.opera);
   return isMobile;
 };
+
+export const getIndexInRange = (end, start = 0) =>
+  Math.floor(Math.random() * (end - start) + start);

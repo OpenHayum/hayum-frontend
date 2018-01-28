@@ -1,11 +1,6 @@
 import { HAYUM_CHANGE_BACKGROUND } from "./appActions";
-import getBGColor from "../../utils/backgroundColorGenerator";
 
-const initialState = {
-  background: getBGColor()
-};
-
-const appReducer = (state = initialState, action) => {
+const appReducer = (state = {}, action) => {
   switch (action.type) {
     default:
       return state;

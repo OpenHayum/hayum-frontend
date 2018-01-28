@@ -1,0 +1,17 @@
+$bg-variants: (rgb(169, 101, 94), rgb(27, 15, 15)),
+   (rgb(30, 51, 100), rgb(3, 6, 11)),  (rgb(64, 85, 89), rgb(6, 8, 8)),
+   (rgb(51, 79, 102), rgb(5, 7, 10)),  (rgb(129, 24, 46), rgb(12, 2, 4)),
+   (rgb(47, 80, 106), rgb(4, 8, 10)),  (rgb(134, 77, 70), rgb(53, 31, 41)),
+   (#b06f67, #61394b),  (rgba(29, 28, 28, 0.8), rgb(17, 17, 17)),
+   (rgb(148, 105, 80), rgb(8, 8, 8));
+
+@mixin populate-bg-variants() {
+  @for $i from 1 through length($bg-variants) {
+    &__bg-variant-#{$i} {
+      background: linear-gradient(nth($bg-variants, $i) 85%);
+    }
+  }
+  &__bg-variant__user-profile {
+    background: linear-gradient(nth($bg-variants, 7) 85%);
+  }
+}

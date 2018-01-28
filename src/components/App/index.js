@@ -13,11 +13,17 @@ import Music from "../Music";
 import Auth from "../Auth";
 import User from "../User";
 import { bounceTransition } from "Utils/router.animated";
-import getBGColor, {
-  userProfileBackground
-} from "Utils/backgroundColorGenerator";
+import { getIndexInRange } from "Utils";
 import styles from "./app.scss";
 import "./app.css";
+
+const bgVariantRegex = /\w*bg-variant-\w*/i;
+
+const NUM_BG_VARIANTS = Object.keys(styles).filter(styleName =>
+  bgVariantRegex.test(styleName)
+).length;
+
+const bgVariantPrefix = "hayum__bg-variant";
 
 const bgChangeType = {
   COLOR: "color",
@@ -60,16 +66,20 @@ class App extends Component {
 
   changeBackground = () => {
     const { pathname } = window.location;
-
     this.hayum.style.background = null;
 
     if (pathname.indexOf(bgChangeRoute.AUTH) !== -1) {
       this.hayum.className =
         this.defaultHayumClassname + bgChangeRules[bgChangeRoute.AUTH];
     } else if (pathname.indexOf(bgChangeRoute.USER) !== -1) {
-      this.hayum.style.background = userProfileBackground;
+      this.hayum.className =
+        this.defaultHayumClassname +
+        ` ${styles[`${bgVariantPrefix}__user-profile`]}`;
     } else {
-      this.hayum.style.background = getBGColor();
+      const bgVariantIndex = getIndexInRange(NUM_BG_VARIANTS) + 1;
+      this.hayum.className =
+        this.defaultHayumClassname +
+        ` ${styles[`${bgVariantPrefix}-${bgVariantIndex}`]}`;
     }
   };
 
