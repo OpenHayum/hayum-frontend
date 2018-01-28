@@ -33,7 +33,7 @@
     "build:all": "yarn run cra:build && yarn run backpack:build",
     "build:start": "yarn run build:all && yarn run server:start",
     "preinstall": "export NODE_ENV=development",
-    "postinstall": "export NODE_ENV=production"
+    "postinstall": "export NODE_ENV=production; yarn build:all"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
