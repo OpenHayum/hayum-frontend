@@ -1,17 +1,71 @@
 @import "~Styles/settings.scss";
 
+$section-padding: 8px;
+
 .Main {
   display: block;
+  &__tabs {
+    margin-top: 8px;
+  }
   &__items {
     height: 100%;
     overflow-y: scroll;
     margin-bottom: 80px;
     &__item {
       margin: 4px 0;
+      > div {
+        display: flex;
+      }
+      header {
+        @extend %line;
+        padding-bottom: $section-padding;
+      }
+      main {
+        @extend %line;
+        padding: $section-padding 0;
+      }
+      footer {
+        padding-top: $section-padding;
+      }
+      &__image {
+        img {
+          width: 100px;
+        }
+      }
+      &__details {
+        display: flex;
+        flex-direction: column;
+        color: $color-text-dark;
+        margin-left: 16px;
+        //justify-content: center;
+        &__item-name {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__artist, &__album {
+          font-size: 14px;
+        }
+        &__uploaded-date {
+          font-size: 14px;
+        }
+      }
     }
   }
-  &__card {
-    margin: 8px;
+  &__right-sidebar {
+    width: auto;
+    &__card {
+      margin: 8px;
+      &__header {
+        padding-bottom: $section-padding;
+        @extend %line;
+      }
+      &__main {
+        font-size: 48px;
+        font-weight: bold;
+        color: $main-header-text-color;
+        //padding: $section-padding 0;
+      }
+    }
   }
   > div {
     > div[class^="col-"] {

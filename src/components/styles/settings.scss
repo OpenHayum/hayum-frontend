@@ -15,9 +15,14 @@ $color-text-lighter-hover: rgba(252, 252, 252, 0.842);
 $text-darker-hover: rgba(255, 255, 255, 0.904);
 $text-main: hsla(0, 0%, 100%, 0.6);
 $color-placeholder: hsla(0, 15%, 79%, 0.699);
+$color-text-dark: rgba(19, 18, 19, 0.79);
 
 %hover-transition {
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+}
+
+%line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.164);
 }

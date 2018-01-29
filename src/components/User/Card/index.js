@@ -3,15 +3,11 @@ import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 import styles from "./card.scss";
 
-const Card = () => {
-  return (
-    <div styleName="Card">
-      <header>Number Of Listeners</header>
-      <main>10</main>
-      <footer>Approved: 3</footer>
-    </div>
-  );
-};
+const Card = (props) => (
+  <div styleName="Card">
+    {props.children}
+  </div>
+);
 
 Card.propTypes = {};
 

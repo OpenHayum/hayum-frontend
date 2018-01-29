@@ -22,6 +22,7 @@ $color: blue;
   // background: url("Images/abs-guitar.jpg") no-repeat center;
   // background-size: cover;
   @include populate-bg-variants();
+  user-select: none;
   &__sidebar {
     @extend %npfh;
     background: rgba(0, 0, 0, 0.45);
