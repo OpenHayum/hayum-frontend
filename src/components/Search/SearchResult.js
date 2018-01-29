@@ -1,6 +1,6 @@
 import React from "react";
 import CSSModules from "react-css-modules";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import ListItem from "../common/ListItem";
 import styles from "./result.scss";

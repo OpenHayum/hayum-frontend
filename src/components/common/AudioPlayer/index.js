@@ -48,7 +48,7 @@ class AudioPlayer extends Component {
   formatTime = seconds => {
     var minutes = Math.floor(seconds / 60);
     minutes = minutes >= 10 ? minutes : "0" + minutes;
-    var seconds = Math.floor(seconds % 60);
+    seconds = Math.floor(seconds % 60);
     seconds = seconds >= 10 ? seconds : "0" + seconds;
     return minutes + ":" + seconds;
   };
@@ -74,7 +74,7 @@ class AudioPlayer extends Component {
   };
 
   mouseUp = event => {
-    if (this.mouseOnPlayhead == true) {
+    if (this.mouseOnPlayhead) {
       this.movePlayhead(event);
       window.removeEventListener("mousemove", this.movePlayhead, true);
     }
@@ -83,7 +83,7 @@ class AudioPlayer extends Component {
 
   movePlayhead = event => {
     const { left, width: timelineWidth } = this.getPosition(this.timeline);
-    const { duration } = this.state;
+    // const { duration } = this.state;
     var newMargLeft = event.clientX - left;
     let playheadPosition = newMargLeft;
 

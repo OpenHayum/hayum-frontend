@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import CoverArtItem from "../common/CoverArtItem";
 import styles from "./music.scss";

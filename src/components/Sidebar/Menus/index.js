@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
 
 import NavMenu from "./NavMenu";
 import styles from "./menus.scss";
