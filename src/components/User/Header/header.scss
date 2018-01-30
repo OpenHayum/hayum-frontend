@@ -42,4 +42,28 @@ $profile-image-dimension: 128px;
       width: auto;
     }
   }
+  &__metas {
+    //border: 1px solid $color-text-dark;
+    display: flex;
+    margin-left: 32px;
+    &__meta {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &:last-child {
+        border-right: none;
+      }
+      &__value {
+        font-size: 24px;
+        color: $color-text-lighter;
+      }
+      &__label {
+        font-size: 14px;
+        color: $color-text-darker;
+        font-weight: 300;
+        margin-top: -5px;
+      }
+    }
+  }
 }

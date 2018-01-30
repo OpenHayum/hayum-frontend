@@ -6,11 +6,15 @@
   border: 1px solid $text-main;
   outline: none;
   color: $color-text-lighter;
-  padding: 8px 0;
+  height: 40px;
   border-radius: 25px;
   letter-spacing: 2px;
   &:hover {
     color: $color-text-lighter-hover;
     border-color: $color-text-lighter-hover;
+  }
+  &--active {
+    color: #fff;
+    border-color: #fff;
   }
 }

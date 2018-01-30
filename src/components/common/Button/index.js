@@ -1,18 +1,30 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
+import cx from 'classnames';
+
 import styles from "./button.scss";
 
-const Button = ({ text, ...restprops }) => (
-  <button {...restprops} styleName="Button">
+const Button = ({text, isActive, children, ...restProps}) => (
+  <button
+    {...restProps}
+    styleName={cx("Button", {
+      "Button--active": isActive,
+    })}
+  >
     {text}
+    {children}
   </button>
 );
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired
+  isActive: PropTypes.bool,
+  text: PropTypes.string,
 };
 
-Button.defaultProps = {};
+Button.defaultProps = {
+  isActive: false,
+  text: '',
+};
 
 export default CSSModules(Button, styles, { allowMultiple: true });
