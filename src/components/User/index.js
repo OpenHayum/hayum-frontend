@@ -14,14 +14,30 @@ class User extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showModal: false,
+    };
   }
 
+  handleOpenModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
+    const { showModal } = this.state;
+
     return (
       <div className="container-fluid" styleName="User">
         <header>
-          <Header />
+          <Header
+            showModal={showModal}
+            onOpenModal={this.handleOpenModal}
+            onCloseModal={this.handleCloseModal}
+          />
         </header>
         <main>
           <Main />

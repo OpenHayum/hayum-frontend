@@ -16,6 +16,11 @@ module.exports = {
     subject: '"Hayum" <noreply.hayum@gmail.com>',
   },
 
+  s3: {
+    partSize: 7 * 1024 * 1024,
+    queueSize: 2,
+  },
+
   collection: 'mp3',
 
   dbUri: 'mongodb://hayum:hayum@ds149433.mlab.com:49433/heroku_v3fk2w9h',

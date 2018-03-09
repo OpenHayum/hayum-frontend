@@ -41,16 +41,12 @@ router.get('/:id', (req, res, next) => {
  */
 router.get('/status/:status', (req, res, next) => {
   const STATUS = req.params.status;
-  try {
-    if (
-      Object.keys(ItemStatus).findIndex(status => STATUS === status) !== -1
-    ) {
-      Item.getItemsByStatus(STATUS).then(items => res.json(items));
-    } else {
-      throw badRequest();
-    }
-  } catch (error) {
-    next(error);
+  if (
+    Object.keys(ItemStatus).findIndex(status => STATUS === status) !== -1
+  ) {
+    Item.getItemsByStatus(STATUS).then(items => res.json(items));
+  } else {
+    next(badRequest());
   }
 });
 

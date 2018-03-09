@@ -1,7 +1,6 @@
 /* eslint-disable func-names */
 import mongoose, { Error } from 'mongoose';
 import crypto from 'crypto';
-import { MessageSchema } from './message';
 import { S3DocumentSchema } from './s3Document';
 
 export const UserRoleType = Object.freeze({
@@ -9,19 +8,23 @@ export const UserRoleType = Object.freeze({
   ADMIN: 'ADMIN',
   MODERATOR: 'MODERATOR',
   USER: 'USER',
+  ARTIST: 'ARTIST',
 });
 
 export const UserSchema = new mongoose.Schema({
-  firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
+  fullname: { type: String, required: true },
   username: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: false },
+  mobile: { type: Number, required: true },
   hashedPassword: { type: String, select: false },
-  otp:  { type: String, select: false },
+  otp:  { type: Number, select: false },
   salt:  { type: String, select: false },
   isArtist: Boolean,
+  isUserVerified: Boolean,
+  hasUserVerifiedAsAnArtist: Boolean,
   profilePicture: S3DocumentSchema,
   coverPicture: S3DocumentSchema,
+  role: { type: String, default: UserRoleType.USER },
   meta: {
     role: String,
     isActivated: Boolean,
@@ -43,10 +46,10 @@ UserSchema.virtual('password')
       throw new Error('Password is empty');
     }
     this.salt = this.makeSalt();
-    this.hashed_password = this.encrypt(password);
+    this.hashedPassword = this.encrypt(password);
   })
   .get(function () {
-    return this.hashed_password;
+    return this.hashedPassword;
   });
 
 UserSchema.methods = {

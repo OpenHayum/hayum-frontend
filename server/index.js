@@ -4,7 +4,6 @@ import path from "path";
 import debugLog from "debug";
 import controllers from "./controllers";
 import morgan from "morgan";
-import http from "http";
 import mongooseStart from "./config/mongo.config";
 import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
