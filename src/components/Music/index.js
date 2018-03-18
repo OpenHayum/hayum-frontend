@@ -19,145 +19,145 @@ class Music extends Component {
     return (
       <div className="container-fluid row" styleName="Music">
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-6 col-xs-4"
+          className="col-lg-2 col-md-3 col-sm-6 col-xs-12"
           styleName="Music__grid"
         >
           <CoverArtItem />

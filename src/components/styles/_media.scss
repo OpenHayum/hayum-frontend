@@ -1,0 +1,24 @@
+@import '~include-media/dist/_include-media.scss';
+
+$gt_desktop_md: '>1440px';
+$gte_desktop_md: '>=1440px';
+$lt_desktop_md: '<1440px';
+$lte_desktop_md: '<=1440px';
+$gt_desktop_lg: '>1920px';
+$gte_desktop_lg: '>=1920px';
+$lt_desktop_lg: '<1920px';
+$lte_desktop_lg: '<=1920px';
+
+/// create a custom default mixin
+/// >1024px & <=1440px
+@mixin hy-media-normal() {
+  @include media(">desktop", #{$lte_desktop_md}) {
+    @content;
+  }
+}
+
+@mixin hy-media-handheld() {
+  @include media("<=tablet") {
+    @content;
+  }
+}

@@ -7,9 +7,9 @@ import Button from "Common/Button";
 import styles from "./register.scss";
 
 const Register = ({ onChange }) => (
-  <div styleName="Register">
-    <div styleName="Register__input__group">
-      <div styleName="Register__input">
+  <div className="container" styleName="Register">
+    <div className="row" styleName="Register__input__group">
+      <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="Register__input">
         <Input
           label="USERNAME *"
           name="username"
@@ -17,7 +17,7 @@ const Register = ({ onChange }) => (
           onChange={onChange}
         />
       </div>
-      <div styleName="Register__input">
+      <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="Register__input">
         <Input
           label="FULL NAME *"
           name="fullname"
@@ -42,8 +42,8 @@ const Register = ({ onChange }) => (
         onChange={onChange}
       />
     </div>
-    <div styleName="Register__input__group">
-      <div styleName="Register__input">
+    <div className="row" styleName="Register__input__group">
+      <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="Register__input">
         <Input
           label="PASSWORD *"
           name="password"
@@ -51,7 +51,7 @@ const Register = ({ onChange }) => (
           onChange={onChange}
         />
       </div>
-      <div styleName="Register__input">
+      <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="Register__input">
         <Input
           label="CONFIRM PASSWORD *"
           name="confirmPassword"

@@ -15,6 +15,14 @@ body,
   height: 100%;
 }
 
+div.row {
+  margin: 0;
+}
+
+.switch-wrapper > div {
+  overflow: hidden;
+}
+
 .hover-transition {
   transition-property: color;
   transition-duration: 0.2s;

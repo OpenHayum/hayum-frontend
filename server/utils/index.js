@@ -10,6 +10,7 @@ export default {
     encrypt(text) {
       const cipher = crypto.createCipher(encryption.algorithm, encryption.key);
       const crypted = cipher.update(text, 'utf8', 'hex') + cipher.final('hex');
+
       return crypted;
     },
 
@@ -20,6 +21,7 @@ export default {
       );
       const decrypted =
         decipher.update(text, 'hex', 'utf8') + decipher.final('utf8');
+
       return decrypted;
     },
   },

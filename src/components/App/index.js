@@ -90,47 +90,49 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid" styleName="hayum" ref={this.setHayumRef}>
-        <div
-          className="col-lg-2 col-md-3 col-sm-3 col-xs-3"
-          styleName="hayum__sidebar"
-        >
-          <Sidebar />
-        </div>
-        <div
-          className="col-lg-10 col-md-9 col-sm-9 col-xs-9"
-          styleName="hayum__main"
-        >
-          <Switch>
-            <AnimatedRoute
-              {...bounceTransition}
-              path="/search"
-              component={Search}
-            />
-            <AnimatedRoute
-              {...bounceTransition}
-              exact
-              path="/"
-              component={Home}
-            />
-            <AnimatedRoute
-              {...bounceTransition}
-              path="/music"
-              component={Music}
-            />
-            <AnimatedRoute
-              {...bounceTransition}
-              path="/auth"
-              component={Auth}
-            />
-            <AnimatedRoute
-              {...bounceTransition}
-              path="/user/:username"
-              component={User}
-            />
-          </Switch>
-        </div>
-        <div styleName="hayum__player">
-          <AudioPlayer />
+        <div className="row">
+          <div
+            className="col-lg-2 col-md-3 col-sm-3 hidden-xs"
+            styleName="hayum__sidebar"
+          >
+            <Sidebar />
+          </div>
+          <div
+            className="col-lg-10 col-md-9 col-sm-9 col-xs-12"
+            styleName="hayum__main"
+          >
+            <Switch>
+              <AnimatedRoute
+                {...bounceTransition}
+                path="/search"
+                component={Search}
+              />
+              <AnimatedRoute
+                {...bounceTransition}
+                exact
+                path="/"
+                component={Home}
+              />
+              <AnimatedRoute
+                {...bounceTransition}
+                path="/music"
+                component={Music}
+              />
+              <AnimatedRoute
+                {...bounceTransition}
+                path="/auth"
+                component={Auth}
+              />
+              <AnimatedRoute
+                {...bounceTransition}
+                path="/user/:username"
+                component={User}
+              />
+            </Switch>
+          </div>
+          <div styleName="hayum__player">
+            <AudioPlayer />
+          </div>
         </div>
       </div>
     );

@@ -1,20 +1,17 @@
 @import "~Styles/settings.scss";
 
 .Register {
-  width: 400px;
+  width: auto;
   user-select: none;
   &__input__group {
-    display: flex;
     > div {
       margin: 0;
-      &:last-child {
-        margin-left: 16px;
-      }
     }
+    margin-bottom: 8px;
   }
   &__input {
     margin: 32px 0;
-    flex: 1;
+    @extend %no-padding;
     label {
       color: rgba(240, 240, 240, 0.795);
       letter-spacing: 1px;
