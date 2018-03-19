@@ -5,15 +5,15 @@ import styles from "./coverArtItem.scss";
 
 const CoverArtItem = () => {
   return (
-    <div styleName="CoverArtItem">
-      <div styleName="CoverArtItem__thumbnail">
+    <div styleName="CoverArtItem" className="row">
+      <div styleName="CoverArtItem__thumbnail" className="col-lg-12 col-md-12 col-sm-12 col-xs-4">
         <div styleName="CoverArtItem__thumbnail__overlay">
           <button>
             <i className="icon-control-play" />
           </button>
         </div>
       </div>
-      <div styleName="CoverArtItem__detail">
+      <div styleName="CoverArtItem__detail" className="col-lg-12 col-md-12 col-sm-12 col-xs-8">
         <a styleName="CoverArtItem__detail__name one-line-truncate">
           Nangi Thamoi Masak Khangna Nungsirure
         </a>
