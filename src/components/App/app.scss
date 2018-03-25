@@ -17,6 +17,7 @@ $color: blue;
   // background: url("Images/abs-guitar.jpg") no-repeat center;
   // background-size: cover;
   @include populate-bg-variants();
+  background-color: black;
   user-select: none;
   > div {
     @extend %npfh;
