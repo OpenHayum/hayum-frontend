@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-sdk": "^2.188.0",
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
     "ejs": "^2.5.7",

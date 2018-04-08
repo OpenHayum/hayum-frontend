@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
+import { findDOMNode } from 'react-dom';
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
@@ -16,36 +17,46 @@ class AudioPlayer extends Component {
   };
 
   static defaultProps = {
-    src: ""
+    src: "http://www.theklocks.com/mp3/Yes%20-%20Owner%20of%20a%20Lonely%20Heart.mp3"
   };
 
   constructor(props) {
     super(props);
-    const DURATION = 180;
     this.state = {
       isPlaying: false,
       playheadPosition: 0,
       activeTimelineWidth: 0,
       currentDuration: "00:00",
-      totalDuration: this.formatTime(DURATION)
+      totalDuration: this.formatTime(null)
     };
 
     this.timeline = null;
+    this.timelineWidth = null;
     this.playhead = null;
     this.mouseOnPlayhead = false;
-    this.duration = DURATION;
+    this.duration = null;
+    this.player = null;
   }
 
   componentDidMount() {
     window.addEventListener("mouseup", this.mouseUp, false);
   }
 
-  clickPercent = event => {
+  componentWillUnmount() {
+    window.removeEventListener("mouseup", this.mouseUp, false);
+    this.player.removeEventListener('canplaythrough', this.handleCanPlayThrough, false);
+    this.player.removeEventListener('timeupdate', this.handleTimeUpdate, false);
+    this.player.removeEventListener('ended', this.handleEnded, false);
+  }
+
+  clickPercent = (event) => {
     const { left, width } = this.getPosition(this.timeline);
     return (event.clientX - left) / width;
   };
 
   formatTime = seconds => {
+    if (!!seconds === false) return "00:00";
+
     var minutes = Math.floor(seconds / 60);
     minutes = minutes >= 10 ? minutes : "0" + minutes;
     seconds = Math.floor(seconds % 60);
@@ -53,9 +64,21 @@ class AudioPlayer extends Component {
     return minutes + ":" + seconds;
   };
 
+  getPosition = el => {
+    return el.getBoundingClientRect();
+  };
+
   handleControlClick = ({ target }) => {
+    const { isPlaying } = this.state;
+
+    if (isPlaying) {
+      this.player.pause();
+    } else {
+      this.player.play();
+    }
+
     this.setState({
-      [target.name]: !this.state.isPlaying
+      [target.name]: !isPlaying
     });
   };
 
@@ -64,9 +87,24 @@ class AudioPlayer extends Component {
     this.movePlayhead(e);
   };
 
-  getPosition = el => {
-    return el.getBoundingClientRect();
-  };
+  handleTimeUpdate = () => {
+    const timelineWidth = 300;
+    const playPercent = timelineWidth * (this.player.currentTime / this.duration);
+    // audioPlayer.currentTime &&
+    //   $currentTime.text(Hayum.formatTime(audioPlayer.currentTime));
+    // duration && $duration.text(Hayum.formatTime(duration));
+    // playhead.style.marginLeft = playPercent + 'px';
+    this.setState({ playheadPosition: playPercent });
+    // if (audioPlayer.currentTime == duration) {
+    //   actionButton.className = '';
+    //   actionButton.className = 'play';
+    // }
+  }
+
+  handleCanPlayThrough = () => {
+    this.duration = this.player.duration;
+    this.setState({ totalDuration: this.formatTime(this.player.duration) })
+  }
 
   mouseDown = () => {
     this.mouseOnPlayhead = true;
@@ -101,16 +139,6 @@ class AudioPlayer extends Component {
         this.duration * (playheadPosition / timelineWidth)
       )
     });
-  };
-
-  setTimelineRef = _ref => {
-    this.timeline = _ref;
-    this.timeline.addEventListener("click", this.handleTimelineClick, false);
-  };
-
-  setPlayheadRef = _ref => {
-    this.playhead = _ref;
-    this.playhead.addEventListener("mousedown", this.mouseDown, false);
   };
 
   render() {
@@ -177,7 +205,7 @@ class AudioPlayer extends Component {
                 {totalDuration}
               </div>
             </div>
-            <audio src={this.props.src} preload="true" />
+            <audio ref={this.setPlayerRef} src={this.props.src} />
           </div>
         </div>
         <div styleName="AudioPlayer__volume">
@@ -193,6 +221,26 @@ class AudioPlayer extends Component {
       </div>
     );
   }
+
+  setTimelineRef = _ref => {
+    this.timeline = _ref;
+    this.timelineWidth = this.timeline.style.width;
+    console.info(this.timeline.getBoundingClientRect());
+    this.timeline.addEventListener("click", this.handleTimelineClick, false);
+  };
+
+  setPlayheadRef = _ref => {
+    this.playhead = _ref;
+    this.playhead.addEventListener("mousedown", this.mouseDown, false);
+  };
+
+  setPlayerRef = _ref => {
+    this.player = _ref;
+    this.player.volume = 0.2;
+    this.player.addEventListener('canplaythrough', this.handleCanPlayThrough, false);
+    this.player.addEventListener('timeupdate', this.handleTimeUpdate, false);
+    this.player.addEventListener('ended', this.handleEnded, false);
+  };
 }
 
 export default CSSModules(AudioPlayer, styles, { allowMultiple: true });
