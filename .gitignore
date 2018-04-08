@@ -22,3 +22,4 @@ src/static/test.mp3
 .idea
 build/
 server/config/
+server/lib/
