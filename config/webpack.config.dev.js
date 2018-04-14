@@ -98,6 +98,7 @@ module.exports = {
       "react-native": "react-native-web",
       Styles: path.resolve(__dirname, "../src/components/styles/"),
       Common: path.resolve(__dirname, "../src/components/common/"),
+      Constants: path.resolve(__dirname, "../src/constants/"),
       Utils: path.resolve(__dirname, "../src/utils"),
       Images: path.resolve(__dirname, "../src/static/images/")
     },
