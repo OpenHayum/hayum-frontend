@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { AnimatedSwitch } from "react-router-transition";
 
 import { bounceTransition } from "./utils/router.animated";
-import AppContainer from "./components/App/AppContainer";
+import AppContainer from "./App/AppContainer";
 import NotFound from "./components/common/NotFound";
 
 const Routes = () => (

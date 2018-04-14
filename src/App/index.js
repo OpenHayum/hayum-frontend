@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import cssModules from "react-css-modules";
-import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import { AnimatedRoute } from "react-router-transition";
-import classNames from "classnames";
 
-import Sidebar from "../Sidebar";
-import Search from "../Search";
+import Sidebar from "../components/Sidebar";
+import Search from "../components/Search";
 import AudioPlayer from "Common/AudioPlayer";
-import Home from "../Home";
-import Music from "../Music";
-import Auth from "../Auth";
-import User from "../User";
+import Home from "../components/Home";
+import Music from "../components/Music";
+import Auth from "../components/Auth";
+import User from "../components/User";
 import { bounceTransition } from "Utils/router.animated";
 import { getIndexInRange } from "Utils";
 import styles from "./app.scss";
@@ -24,11 +22,6 @@ const NUM_BG_VARIANTS = Object.keys(styles).filter(styleName =>
 ).length;
 
 const bgVariantPrefix = "hayum__bg-variant";
-
-const bgChangeType = {
-  COLOR: "color",
-  IMAGE: "image"
-};
 
 const bgChangeRoute = {
   AUTH: "/auth",
