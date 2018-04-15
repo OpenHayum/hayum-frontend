@@ -77,6 +77,7 @@ class Register extends Component {
           <Input
             label="EMAIL"
             name={inputNames.email}
+            type="email"
             placeholder="Enter Email"
             onChange={this.handleChange}
           />
@@ -85,6 +86,7 @@ class Register extends Component {
           <Input
             label="PHONE *"
             name={inputNames.phone}
+            type="number"
             placeholder="Enter Phone Number"
             onChange={this.handleChange}
           />
@@ -94,6 +96,7 @@ class Register extends Component {
             <Input
               label="PASSWORD *"
               name={inputNames.password}
+              type="password"
               placeholder="Enter Password"
               onChange={this.handleChange}
             />
