@@ -3,7 +3,7 @@ import * as apiConstants from 'Constants/api';
 
 const host = apiConstants.resolveHost();
 
-const Network = resource => {
+const Network = () => {
   let buildURL = (path = null) => {
     return [
       host,
