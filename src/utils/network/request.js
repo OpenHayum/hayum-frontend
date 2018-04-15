@@ -14,17 +14,21 @@ async function request(url, options) {
   // Fetch returns a promise
   return fetch(url, options)
     .then(response => {
-      if (response.status > 200) {
+      if (response.status > 300) {
+        const error = new Error(`Server error: ${response.status} status`);
+        error.response = response;
 
-        // Errors such as this are passed up to the middleware
-        throw new Error(`Server error: ${response.status} status`);
+        throw error;
       }
 
       return response.json();
     })
     .then(response => {
       if (response.errors) {
-        throw new Error(`Server error: ${response.errors.message}`);
+        const error = new Error(`Server error: ${response.errors.message}`);
+        error.response = response;
+
+        throw error;
       }
 
       return response;

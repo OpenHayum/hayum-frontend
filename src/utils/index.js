@@ -18,3 +18,10 @@ export const isMobileDevice = () => {
 
 export const getIndexInRange = (end, start = 0) =>
   Math.floor(Math.random() * (end - start) + start);
+
+export const wrapActionWithGlobalErrorMeta = action => ({
+  meta: {
+    globalError: true,
+  },
+  ...action,
+});
