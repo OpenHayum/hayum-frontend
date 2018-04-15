@@ -12,8 +12,10 @@ class Input extends Component {
     };
   }
 
-  handleChange = ({ target }) => {
+  handleChange = (e) => {
+    const { target } = e;
     this.setState({ value: target.value });
+    this.props.onChange(e);
   };
 
   handleBlur = ({ target }) => {
@@ -48,11 +50,13 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string,
   onBlur: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
   value: '',
   onBlur: () => null,
+  onChange: () => null,
 };
 
 export default CSSModules(Input, styles, { allowMultiple: true });

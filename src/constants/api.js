@@ -17,7 +17,7 @@ export const host = {
 
 export function resolveHost() {
   switch (window.ENV) {
-    case [envs.DEVELOPMENT]:
+    case envs.DEVELOPMENT:
       return host[envs.DEVELOPMENT].HY_SERVICE;
     default:
       return host[envs.PRODUCTION].HY_SERVICE;

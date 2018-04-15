@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
-import { findDOMNode } from 'react-dom';
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
