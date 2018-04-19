@@ -16,6 +16,7 @@ class User extends Component {
     super(props);
     this.state = {
       showModal: false,
+      files: []
     };
   }
 
@@ -28,7 +29,7 @@ class User extends Component {
   };
 
   render() {
-    const { showModal } = this.state;
+    const { showModal, files } = this.state;
 
     return (
       <div className="container-fluid" styleName="User">
@@ -37,6 +38,7 @@ class User extends Component {
             showModal={showModal}
             onOpenModal={this.handleOpenModal}
             onCloseModal={this.handleCloseModal}
+            files={files}
           />
         </header>
         <main>
