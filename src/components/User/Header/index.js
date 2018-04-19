@@ -2,6 +2,12 @@ import React from "react";
 import CSSModules from "react-css-modules";
 import ReactModal from 'react-modal';
 // import PropTypes from "prop-types";
+// Import React FilePond
+import { FilePond, File, registerPlugin } from 'react-filepond';
+
+// Import FilePond styles
+import 'filepond/dist/filepond.min.css';
+
 
 import pushparani from "Images/pushparani.jpg";
 import styles from "./header.scss";
@@ -9,7 +15,7 @@ import Button from 'Common/Button';
 
 ReactModal.setAppElement('#root');
 
-const Header = ({ showModal, onOpenModal, onCloseModal }) => {
+const Header = ({ showModal, onOpenModal, onCloseModal, files }) => {
   return (
     <div styleName="ProfileHeader">
       <section styleName="ProfileHeader__image">
@@ -27,9 +33,9 @@ const Header = ({ showModal, onOpenModal, onCloseModal }) => {
           </Button>
         </div>
         {/*<div styleName="ProfileHeader__metas__meta">*/}
-          {/*<Button>*/}
-            {/*<span><i className="icon-user-follow" /> </span> Follow*/}
-          {/*</Button>*/}
+        {/*<Button>*/}
+        {/*<span><i className="icon-user-follow" /> </span> Follow*/}
+        {/*</Button>*/}
         {/*</div>*/}
         <div styleName="ProfileHeader__metas__meta">
           <div styleName="ProfileHeader__metas__meta__value">1000</div>
@@ -46,7 +52,15 @@ const Header = ({ showModal, onOpenModal, onCloseModal }) => {
         onRequestClose={onCloseModal}
         shouldCloseOnOverlayClick={false}
       >
-        <p>Modal text!</p>
+
+        <FilePond allowMultiple={true} maxFiles={3} server="/api">
+
+          {/* Set current files using the <File/> component */}
+          {files.map(file => (
+            <File key={file} source={file} />
+          ))}
+
+        </FilePond>
         <button onClick={onCloseModal}>Close Modal</button>
       </ReactModal>
     </div>
