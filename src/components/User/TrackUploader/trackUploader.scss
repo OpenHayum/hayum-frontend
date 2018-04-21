@@ -1,0 +1,25 @@
+@import "~Styles/settings.scss";
+
+.TrackUploader {
+  width: auto;
+  user-select: none;
+  &__input__group {
+    > div {
+      margin: 0;
+    }
+    margin-bottom: 8px;
+  }
+  &__input {
+    margin: 32px 0;
+    @extend %no-padding;
+    label {
+      color: rgba(240, 240, 240, 0.795);
+      letter-spacing: 1px;
+      font-weight: 400;
+      cursor: pointer;
+      input {
+        margin-right: 8px;
+      }
+    }
+  }
+}
