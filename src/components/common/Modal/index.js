@@ -1,6 +1,6 @@
 import React from "react";
 import ReactModal from 'react-modal';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const customStyles = {
   overlay: {
@@ -37,7 +37,6 @@ ReactModal.setAppElement('#root');
 
 export default function Modal({
   showModal,
-  onOpenModal,
   onCloseModal,
   children,
 }) {
@@ -53,3 +52,9 @@ export default function Modal({
     </ReactModal>
   )
 }
+
+Modal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
+};

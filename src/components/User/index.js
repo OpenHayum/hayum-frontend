@@ -52,7 +52,7 @@ class User extends Component {
           showModal={showModal}
           onCloseModal={this.handleCloseModal}
         >
-          <FilePond allowMultiple={true} maxFiles={3} server="/api">
+          <FilePond allowMultiple={true} maxFiles={1} server="/api">
             {files.map(file => (
               <File key={file} source={file} />
             ))}
