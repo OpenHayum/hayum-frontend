@@ -3,8 +3,10 @@ import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import Header from "./Header";
+import TrackUploader from './TrackUploader';
 import Main from "./Main";
 import Footer from "./Footer";
+import Modal from 'Common/Modal';
 import styles from "./user.scss";
 
 class User extends Component {
@@ -16,7 +18,6 @@ class User extends Component {
     super(props);
     this.state = {
       showModal: false,
-      files: []
     };
   }
 
@@ -29,16 +30,13 @@ class User extends Component {
   };
 
   render() {
-    const { showModal, files } = this.state;
+    const { showModal } = this.state;
 
     return (
       <div className="container-fluid" styleName="User">
         <header>
           <Header
-            showModal={showModal}
             onOpenModal={this.handleOpenModal}
-            onCloseModal={this.handleCloseModal}
-            files={files}
           />
         </header>
         <main>
@@ -47,6 +45,12 @@ class User extends Component {
         <footer>
           <Footer />
         </footer>
+        <Modal
+          showModal={showModal}
+          onCloseModal={this.handleCloseModal}
+        >
+          <TrackUploader />
+        </Modal>
       </div>
     );
   }
