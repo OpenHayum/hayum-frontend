@@ -2834,10 +2834,6 @@ filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
 
-filepond@^1.2.8:
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/filepond/-/filepond-1.2.11.tgz#f4a878ad3c717017bb5348b9f8d763f3fd09128a"
-
 fileset@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/fileset/-/fileset-2.0.3.tgz#8e7548a96d3cc2327ee5e674168723a333bba2a0"
@@ -6012,12 +6008,6 @@ react-dom@^16.2.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
-
-react-filepond@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-filepond/-/react-filepond-2.0.4.tgz#aa85d334141f7df691b30cac23a6b5f1a36bb972"
-  dependencies:
-    filepond "^1.2.8"
 
 react-modal@^3.1.11:
   version "3.1.11"
