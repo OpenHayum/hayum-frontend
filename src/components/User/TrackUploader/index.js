@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Input from 'Common/Input';
 import Button from 'Common/Button';
+import FileUpload from './FileUpload';
 import styles from './trackUploader.scss';
 
 const formConfig = {
@@ -30,49 +31,35 @@ class TrackUploader extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      files: [],
+    };
   }
 
   render() {
+    const { files } = this.state;
+
     return (
       <div className="container" styleName="TrackUploader">
-        <div className="row" styleName="TrackUploader__input__group">
-          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="TrackUploader__input">
-            <Input
-              label="TITLE *"
-              name={inputNames.userName}
-              placeholder="Enter Title"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" styleName="TrackUploader__input">
-            <Input
-              label="ARTIST *"
-              name={inputNames.fullName}
-              placeholder="Enter Artist"
-              onChange={this.handleChange}
-            />
-          </div>
-        </div>
+        <FileUpload label="UPLOAD AUDIO" files={files} />
+        <FileUpload label="UPLOAD AUDIO THUMBNAIL" files={files} />
         <div styleName="TrackUploader__input">
           <Input
-            label="EMAIL"
-            name={inputNames.email}
-            type="email"
-            placeholder="Enter Email"
+            label="TITLE *"
+            name={inputNames.userName}
+            placeholder="Enter Title"
             onChange={this.handleChange}
           />
         </div>
         <div styleName="TrackUploader__input">
           <Input
-            label="PHONE *"
-            name={inputNames.phone}
-            type="number"
-            placeholder="Enter Phone Number"
+            label="ARTIST *"
+            name={inputNames.fullName}
+            placeholder="Enter Artist"
             onChange={this.handleChange}
           />
         </div>
-        <div styleName="TrackUploader__input">
+        <div styleName="TrackUploader__input TrackUploader__input__last">
           <Button text="Submit" onClick={this.handleSubmit} />
         </div>
       </div>

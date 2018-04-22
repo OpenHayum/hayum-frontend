@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
-import { FilePond, File } from 'react-filepond';
-import 'filepond/dist/filepond.min.css';
 
 import Header from "./Header";
 import TrackUploader from './TrackUploader';
@@ -20,7 +18,6 @@ class User extends Component {
     super(props);
     this.state = {
       showModal: false,
-      files: []
     };
   }
 
@@ -33,7 +30,7 @@ class User extends Component {
   };
 
   render() {
-    const { showModal, files } = this.state;
+    const { showModal } = this.state;
 
     return (
       <div className="container-fluid" styleName="User">
@@ -52,11 +49,6 @@ class User extends Component {
           showModal={showModal}
           onCloseModal={this.handleCloseModal}
         >
-          <FilePond allowMultiple={true} maxFiles={1} server="/api">
-            {files.map(file => (
-              <File key={file} source={file} />
-            ))}
-          </FilePond>
           <TrackUploader />
         </Modal>
       </div>

@@ -3,6 +3,9 @@
 .TrackUploader {
   width: auto;
   user-select: none;
+  h5 {
+    @extend %hy-form-label;
+  }
   &__input__group {
     > div {
       margin: 0;
@@ -12,14 +15,8 @@
   &__input {
     margin: 32px 0;
     @extend %no-padding;
-    label {
-      color: rgba(240, 240, 240, 0.795);
-      letter-spacing: 1px;
-      font-weight: 400;
-      cursor: pointer;
-      input {
-        margin-right: 8px;
-      }
+    &__last {
+      margin-bottom: 0;
     }
   }
 }

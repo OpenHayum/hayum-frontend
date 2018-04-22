@@ -4,10 +4,7 @@
   width: 100%;
   user-select: none;
   h5 {
-    color: $color-text-lighter;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    font-weight: 400;
+    @extend %hy-form-label;
   }
   input {
     width: 100%;
