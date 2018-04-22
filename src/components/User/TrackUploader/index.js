@@ -7,6 +7,8 @@ import Button from 'Common/Button';
 import FileUpload from './FileUpload';
 import styles from './trackUploader.scss';
 
+const apiUrl = "http://localhost:8080/api/v1/file/upload";
+
 const formConfig = {
   validation: {
     userName: 'userName',
@@ -34,6 +36,9 @@ class TrackUploader extends Component {
     this.state = {
       files: [],
     };
+
+    this.audioRef = null;
+    this.thumbnailRef = null;
   }
 
   render() {
@@ -41,8 +46,18 @@ class TrackUploader extends Component {
 
     return (
       <div className="container" styleName="TrackUploader">
-        <FileUpload label="UPLOAD AUDIO" files={files} />
-        <FileUpload label="UPLOAD AUDIO THUMBNAIL" files={files} />
+        <FileUpload
+          setRef={this.setAudioRef}
+          label="UPLOAD AUDIO"
+          files={files}
+          apirUrl={apiUrl}
+        />
+        <FileUpload
+          setRef={this.setThumbnailRef}
+          label="UPLOAD AUDIO THUMBNAIL"
+          files={files}
+          apirUrl={apiUrl}
+        />
         <div styleName="TrackUploader__input">
           <Input
             label="TITLE *"
@@ -64,6 +79,14 @@ class TrackUploader extends Component {
         </div>
       </div>
     );
+  }
+
+  setAudioRef = (_ref) => {
+    this.audioRef = _ref;
+  }
+
+  setThumbnailRef = (_ref) => {
+    this.thumbnailRef = _ref;
   }
 }
 
