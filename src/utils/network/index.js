@@ -1,5 +1,5 @@
 import request from './request';
-import * as apiConstants from 'Constants/api';
+import * as apiConstants from '../../constants/api';
 
 const host = apiConstants.resolveHost();
 
