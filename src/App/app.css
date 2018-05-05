@@ -1,4 +1,5 @@
 .auth-bg-image {
+  background-color: rgba(0, 0, 0, 0.9); 
   background: url("~Images/abs-guitar.jpg") no-repeat center;
   background-size: cover;
 }
