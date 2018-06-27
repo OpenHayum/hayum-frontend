@@ -2,8 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
 import debugLog from "debug";
-import controllers from "./controllers";
 import morgan from "morgan";
+
+import controllers from "./controllers";
 import mongooseStart from "./config/mongo.config";
 import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
