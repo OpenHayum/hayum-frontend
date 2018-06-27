@@ -7,7 +7,9 @@ import CoverArt from "../CoverArt";
 import styles from "./audioPlayer.scss";
 
 const controlNames = {
-  IS_PLAYING: "isPlaying"
+  IS_PLAYING: "isPlaying",
+  IS_PAUSED: 'isPaused',
+  IS_RESET: 'isReset',
 };
 
 class AudioPlayer extends Component {
