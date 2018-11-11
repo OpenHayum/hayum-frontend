@@ -37,7 +37,7 @@ $color: blue;
   &__main {
     @extend %npfh;
     margin-bottom: $player-height;
-    overflow-y: scroll;
+    overflow-y: auto;
     > div {
       @extend %full-height;
       > div {

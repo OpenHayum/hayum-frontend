@@ -3,7 +3,7 @@
 .TrackUploader {
   width: auto;
   user-select: none;
-  overflow: hidden scroll;
+  overflow: hidden auto;
   h5 {
     @extend %hy-form-label;
   }

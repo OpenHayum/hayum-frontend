@@ -112,6 +112,6 @@
 
 .one-line-truncate {
   white-space: nowrap;
-  overflow: scroll;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
