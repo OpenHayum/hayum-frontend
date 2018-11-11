@@ -18,7 +18,7 @@ class AudioPlayer extends Component {
   };
 
   static defaultProps = {
-    src: "http://www.theklocks.com/mp3/Yes%20-%20Owner%20of%20a%20Lonely%20Heart.mp3"
+    src: "http://www.panacherock.com/downloads/mp3/01_Afterlife.mp3"
   };
 
   constructor(props) {
