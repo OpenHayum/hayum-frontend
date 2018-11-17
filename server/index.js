@@ -9,6 +9,7 @@ import controllers from "./controllers";
 // import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
 
+const port = 4312;
 const debug = debugLog("HAYUM: server");
 const app = express();
 
