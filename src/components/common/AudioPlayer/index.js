@@ -91,15 +91,11 @@ class AudioPlayer extends Component {
   handleTimeUpdate = () => {
     const timelineWidth = 300;
     const playPercent = timelineWidth * (this.player.currentTime / this.duration);
-    // audioPlayer.currentTime &&
-    //   $currentTime.text(Hayum.formatTime(audioPlayer.currentTime));
-    // duration && $duration.text(Hayum.formatTime(duration));
-    // playhead.style.marginLeft = playPercent + 'px';
-    this.setState({ playheadPosition: playPercent });
-    // if (audioPlayer.currentTime == duration) {
-    //   actionButton.className = '';
-    //   actionButton.className = 'play';
-    // }
+    
+    this.setState({ 
+      playheadPosition: playPercent,
+      currentDuration: this.formatTime(this.player.currentTime),
+    });
   }
 
   handleCanPlayThrough = () => {
