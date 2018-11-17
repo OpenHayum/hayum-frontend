@@ -5,8 +5,8 @@ import debugLog from "debug";
 import morgan from "morgan";
 
 import controllers from "./controllers";
-import mongooseStart from "./config/mongo.config";
-import { port } from "./config/hayum.config";
+// import mongooseStart from "./config/mongo.config";
+// import { port } from "./config/hayum.config";
 import { notFound } from "./errors";
 
 const debug = debugLog("HAYUM: server");
@@ -52,7 +52,7 @@ app.use((err, req, res) => {
 });
 
 app.listen(process.env.PORT || port, error => {
-  mongooseStart();
+  // mongooseStart();
   if (error) {
     debug("error", error);
   }

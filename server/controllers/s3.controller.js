@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import log from 'debug';
-import HayumS3 from '../lib/hayumS3';
+// import HayumS3 from '../lib/hayumS3';
 
 // const { S3Document } = require('../models/s3Document');
 // const { badRequest, notFound } = require('../errors');
@@ -13,7 +13,7 @@ const debug = log('HAYUM: S3Controller');
  * upload file
  */
 router.post('/upload', (req, res) => {
-  HayumS3.uploadFile(new Buffer(1024*1024*3));
+  // HayumS3.uploadFile(new Buffer(1024*1024*3));
   res.status(200).send();
 });
 
