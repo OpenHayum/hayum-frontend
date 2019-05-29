@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
     "aws-sdk": "^2.188.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -78,7 +81,9 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.4",
     "style-loader": "0.19.0",
+    "typescript": "^3.5.1",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
@@ -118,11 +123,6 @@
       "jsx",
       "node"
     ]
-  },
-  "engines": {
-    "node": "11.0.0",
-    "npm": "5.5.1",
-    "yarn": "1.12.1"
   },
   "babel": {
     "presets": [
