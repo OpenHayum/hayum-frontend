@@ -12,13 +12,22 @@
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
-//    "noImplicitAny": true,
+    "noImplicitThis": false,
+    "noImplicitAny": false,
+    "noImplicitAnyForClassMembers": false,
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "Styles/*": ["src/components/styles/*"],
+      "Common/*": ["src/components/common/*"],
+      "Constants/*": ["src/constants/*"],
+      "Utils/*": ["src/utils/*"],
+      "Utils": ["src/utils/index"],
+      "Images/*": ["src/static/images/*"]
+    }
   },
   "include": [
     "./src/"

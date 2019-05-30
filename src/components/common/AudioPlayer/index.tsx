@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import * as React from "react";
 import classnames from "classnames";
-import PropTypes from "prop-types";
+import * as PropTypes  from "prop-types";
 
 import CoverArt from "../CoverArt";
-import styles from "./audioPlayer.scss";
+import  "./audioPlayer.scss";
 
 const controlNames = {
   IS_PLAYING: "isPlaying",
@@ -11,7 +11,7 @@ const controlNames = {
   IS_RESET: 'isReset',
 };
 
-class AudioPlayer extends Component {
+class AudioPlayer extends React.Component<any, any> {
   static propTypes = {
     src: PropTypes.string
   };
@@ -19,6 +19,14 @@ class AudioPlayer extends Component {
   static defaultProps = {
     src: "http://www.panacherock.com/downloads/mp3/01_Afterlife.mp3"
   };
+
+  timeline: any;
+  timelineWidth: any;
+  playhead: any;
+  mouseOnPlayhead: any;
+  duration: any;
+  player: any;
+  handleEnded: any;
 
   constructor(props) {
     super(props);
@@ -57,7 +65,8 @@ class AudioPlayer extends Component {
   formatTime = seconds => {
     if (!!seconds === false) return "00:00";
 
-    var minutes = Math.floor(seconds / 60);
+    let minutes: any;
+    minutes = Math.floor(seconds / 60);
     minutes = minutes >= 10 ? minutes : "0" + minutes;
     seconds = Math.floor(seconds % 60);
     seconds = seconds >= 10 ? seconds : "0" + seconds;

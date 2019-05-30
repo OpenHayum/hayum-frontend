@@ -2,7 +2,7 @@ import * as React from "react";
 // import PropTypes from "prop-types";
 
 import CoverArtItem from "../common/CoverArtItem";
-import styles from "./music.scss";
+import  "./music.scss";
 
 class Music extends React.Component<any, any> {
   static propTypes = {};

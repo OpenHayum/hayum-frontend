@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Input from "Common/Input";
 import Button from "Common/Button";
-import styles from "./register.scss";
+import  "./register.scss";
 
 const formConfig = {
   validation: {

@@ -1,6 +1,6 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import styles from "./coverArt.scss";
+import  "./coverArt.scss";
 
 const CoverArt = () => (
   <div styleName="CoverArt">

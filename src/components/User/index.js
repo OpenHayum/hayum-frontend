@@ -6,7 +6,7 @@ import TrackUploader from './TrackUploader';
 import Main from "./Main";
 import Footer from "./Footer";
 import Modal from 'Common/Modal';
-import styles from "./user.scss";
+import  "./user.scss";
 
 class User extends Component {
   static propTypes = {};

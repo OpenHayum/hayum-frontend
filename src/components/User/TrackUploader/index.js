@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Input from 'Common/Input';
 import Button from 'Common/Button';
 import FileUpload from './FileUpload';
-import styles from './trackUploader.scss';
+import  './trackUploader.scss';
 
 const apiUrl = "http://localhost:8080/api/v1/file/upload";
 

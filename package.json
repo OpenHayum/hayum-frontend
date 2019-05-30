@@ -8,6 +8,7 @@
     "@types/react-router-dom": "^4.3.3",
     "aws-sdk": "^2.188.0",
     "axios": "^0.18.0",
+    "babel-plugin-react-css-modules": "^5.2.6",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
     "ejs": "^2.5.7",

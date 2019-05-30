@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import PropTypes from "prop-types";
 
 import SearchResult from "./SearchResult";
-import styles from "./search.scss";
+import  "./search.scss";
 
 import mockData from "../../mocks/searchMockData";
 

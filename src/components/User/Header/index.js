@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 
 import pushparani from "Images/pushparani.jpg";
-import styles from "./header.scss";
+import  "./header.scss";
 import Button from 'Common/Button';
 
 

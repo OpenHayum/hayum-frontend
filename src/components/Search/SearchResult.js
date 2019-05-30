@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 
 import ListItem from "../common/ListItem";
-import styles from "./result.scss";
+import  "./result.scss";
 
 const SearchResult = ({ result }) => {
   return (

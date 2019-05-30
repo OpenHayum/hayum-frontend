@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import PropTypes from "prop-types";
 
 import NavMenu from "./NavMenu";
-import styles from "./menus.scss";
+import  "./menus.scss";
 
 class Menus extends Component {
   static propTypes = {};

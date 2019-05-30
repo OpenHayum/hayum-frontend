@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import Login from "./Login";
 import Register from "./Register";
 import { signUpUser } from './authActions';
-import styles from "./auth.scss";
+import  "./auth.scss";
 
 const Auth = ({
   match,

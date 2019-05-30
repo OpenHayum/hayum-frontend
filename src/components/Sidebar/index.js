@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import NavMenu from "./Menus/NavMenu";
 import Menus from "./Menus";
-import styles from "./sidebar.scss";
+import  "./sidebar.scss";
 
 class Sidebar extends Component {
   static propTypes = {};
@@ -25,7 +25,7 @@ class Sidebar extends Component {
         <div styleName="Sidebar__logo">
           <div />
         </div>
-        <NavMenu to="/search" className={styles.Sidebar__search}>
+        <NavMenu to="/search" styleName="Sidebar__search">
           <span>Search</span>
           <span>
             <i className="icon-magnifier" />

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 
-import styles from "./navMenu.scss";
+import  "./navMenu.scss";
 
 const NavMenu = ({ to, text, children, className, onClick }) => (
   <div

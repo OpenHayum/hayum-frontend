@@ -33,6 +33,9 @@ const bgChangeRules = {
 
 class App extends React.Component<any, any> {
   static propTypes = {};
+  lastKnownPathname: string;
+  defaultHayumClassname: any;
+  hayum: any;
 
   constructor(props) {
     super(props);
@@ -51,7 +54,7 @@ class App extends React.Component<any, any> {
   componentWillReceiveProps(nextProps) {
     const { pathname } = window.location;
     if (pathname !== this.lastKnownPathname) {
-      this.changeBackground(pathname);
+      this.changeBackground();
       this.lastKnownPathname = pathname;
     }
   }

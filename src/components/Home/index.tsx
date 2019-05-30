@@ -1,7 +1,7 @@
 import * as React from "react";
 // import PropTypes from "prop-types";
 
-import styles from "./home.scss";
+import  "./home.scss";
 import Music from "../Music";
 
 class Home extends React.Component<any, any> {

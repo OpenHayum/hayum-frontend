@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './fileUpload.scss';
+import  './fileUpload.scss';
 
 const FileUpload = ({
   label,

@@ -1,6 +1,6 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import styles from "./listItem.scss";
+import  "./listItem.scss";
 
 const ListItem = ({ data, position }) => (
   <div styleName="ListItem">

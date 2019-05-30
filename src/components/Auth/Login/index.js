@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Input from "Common/Input";
 import Button from "Common/Button";
-import styles from "./login.scss";
+import  "./login.scss";
 
 const Login = ({ onChange }) => (
   <div styleName="Login">

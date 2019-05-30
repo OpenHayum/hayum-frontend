@@ -3,7 +3,7 @@ import React from "react";
 
 import Tabs from "Common/Tabs";
 import Card from "../Card";
-import styles from "./main.scss";
+import  "./main.scss";
 import absLampImage from 'Images/abs-lamp.jpeg';
 
 const userProfileTabTitles = {
