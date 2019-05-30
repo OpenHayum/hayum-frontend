@@ -1,5 +1,5 @@
-import React from "react";
-import CSSModules from "react-css-modules";
+import * as React from "react";
+import { CSSModules } from "react-css-modules";
 // import PropTypes from "prop-types";
 import styles from "./coverArtItem.scss";
 

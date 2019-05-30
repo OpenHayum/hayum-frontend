@@ -6,6 +6,6 @@ import App from "./index";
 // const mapStateToProps = ({ app }) => ({
 // });
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch: any) => bindActionCreators({}, dispatch);
 
 export default connect(null, mapDispatchToProps)(App);

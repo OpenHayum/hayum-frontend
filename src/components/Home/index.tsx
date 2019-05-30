@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import * as React from "react";
 import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import styles from "./home.scss";
 import Music from "../Music";
 
-class Home extends Component {
+class Home extends React.Component<any, any> {
   static propTypes = {};
 
   static defaultProps = {};

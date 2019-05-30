@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.3",
     "aws-sdk": "^2.188.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
@@ -42,6 +43,7 @@
     "postinstall": "yarn build:all"
   },
   "devDependencies": {
+    "@types/react-css-modules": "^4.6.2",
     "@types/react-redux": "^7.0.9",
     "autoprefixer": "7.1.6",
     "awesome-typescript-loader": "^5.2.1",

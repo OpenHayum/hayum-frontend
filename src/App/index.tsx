@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import cssModules from "react-css-modules";
+import * as React from "react";
+import { CSSModules } from "react-css-modules";
 import { Switch } from "react-router-dom";
 import { AnimatedRoute } from "react-router-transition";
 
@@ -32,7 +32,7 @@ const bgChangeRules = {
   [bgChangeRoute.AUTH]: " auth-bg-image"
 };
 
-class App extends Component {
+class App extends React.Component<any, any> {
   static propTypes = {};
 
   constructor(props) {
@@ -132,4 +132,4 @@ class App extends Component {
   }
 }
 
-export default cssModules(App, styles, { allowMultiple: true });
+export default CSSModules(App, styles, { allowMultiple: true });

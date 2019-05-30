@@ -1,16 +1,15 @@
 import * as React from "react";
 import { render } from "react-dom";
 import { Provider } from 'react-redux';
-
+// import {Routes} from "./routes";
 import store from "./store";
 import "./static/css/bootstrap.min.css";
 import "./index.css";
 import "./index.scss";
-import Routes from "./Routes";
 
 render(
   <Provider store={store}>
-    <Routes />
+    {/*<Routes />*/}
   </Provider>,
   document.getElementById("root")
 );
