@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 import styles from "./listItem.scss";
 
@@ -17,4 +16,4 @@ ListItem.propTypes = {};
 
 ListItem.defaultProps = {};
 
-export default CSSModules(ListItem, styles, { allowMultiple: true });
+export default ListItem;

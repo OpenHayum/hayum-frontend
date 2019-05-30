@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
@@ -240,4 +239,4 @@ class AudioPlayer extends Component {
   };
 }
 
-export default CSSModules(AudioPlayer, styles, { allowMultiple: true });
+export default AudioPlayer;

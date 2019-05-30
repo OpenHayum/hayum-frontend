@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import styles from './fileUpload.scss';
 
@@ -44,4 +43,4 @@ FileUpload.defaultProps = {
   files: [],
 };
 
-export default CSSModules(FileUpload, styles, { allowMultiple: true });
+export default FileUpload;

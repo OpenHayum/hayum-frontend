@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
@@ -55,4 +54,4 @@ class Tabs extends Component {
   }
 }
 
-export default CSSModules(Tabs, styles, { allowMultiple: true });
+export default Tabs;

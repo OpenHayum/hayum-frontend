@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import cx from 'classnames';
 
@@ -27,4 +26,4 @@ Button.defaultProps = {
   text: '',
 };
 
-export default CSSModules(Button, styles, { allowMultiple: true });
+export default Button;

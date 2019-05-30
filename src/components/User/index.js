@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import Header from "./Header";
@@ -56,4 +55,4 @@ class User extends Component {
   }
 }
 
-export default CSSModules(User, styles, { allowMultiple: true });
+export default User;

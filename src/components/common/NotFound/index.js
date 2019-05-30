@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import styles from "./notFound.scss";
 
@@ -15,4 +14,4 @@ NotFound.propTypes = {};
 
 NotFound.defaultProps = {};
 
-export default CSSModules(NotFound, styles, { allowMultiple: true });
+export default NotFound;

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { CSSModules } from "react-css-modules";
 // import PropTypes from "prop-types";
 import styles from "./coverArtItem.scss";
 
@@ -29,4 +28,4 @@ CoverArtItem.propTypes = {};
 
 CoverArtItem.defaultProps = {};
 
-export default CSSModules(CoverArtItem, styles, { allowMultiple: true });
+export default CoverArtItem;

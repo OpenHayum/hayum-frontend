@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import cssModules from "react-css-modules";
 import classNames from "classnames";
 // import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -49,4 +48,4 @@ class Sidebar extends Component {
   }
 }
 
-export default cssModules(Sidebar, styles, { allowMultiple: true });
+export default Sidebar;

@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
 import Input from "Common/Input";
@@ -39,4 +38,5 @@ Login.defaultProps = {
   onChange: () => null
 };
 
-export default CSSModules(Login, styles, { allowMultiple: true });
+export default Login;
+

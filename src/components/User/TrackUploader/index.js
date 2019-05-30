@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 
 import Input from 'Common/Input';
@@ -90,4 +89,4 @@ class TrackUploader extends Component {
   }
 }
 
-export default CSSModules(TrackUploader, styles, { allowMultiple: true });
+export default TrackUploader;

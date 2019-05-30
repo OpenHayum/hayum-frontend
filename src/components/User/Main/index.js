@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import Tabs from "Common/Tabs";
@@ -182,4 +181,4 @@ Main.propTypes = {};
 
 Main.defaultProps = {};
 
-export default CSSModules(Main, styles, {allowMultiple: true});
+export default Main;

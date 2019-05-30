@@ -1,5 +1,4 @@
 import * as React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import styles from "./home.scss";
@@ -22,4 +21,4 @@ class Home extends React.Component<any, any> {
   }
 }
 
-export default CSSModules(Home, styles, { allowMultiple: true });
+export default Home;

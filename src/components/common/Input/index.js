@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import styles from "./input.scss";
 
@@ -59,4 +58,4 @@ Input.defaultProps = {
   onChange: () => null,
 };
 
-export default CSSModules(Input, styles, { allowMultiple: true });
+export default Input;

@@ -1,5 +1,4 @@
 import * as React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import CoverArtItem from "../common/CoverArtItem";
@@ -167,4 +166,4 @@ class Music extends React.Component<any, any> {
   }
 }
 
-export default CSSModules(Music, styles, { allowMultiple: true });
+export default Music;

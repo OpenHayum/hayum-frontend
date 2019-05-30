@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 import styles from "./coverArt.scss";
 
@@ -13,4 +12,4 @@ CoverArt.propTypes = {};
 
 CoverArt.defaultProps = {};
 
-export default CSSModules(CoverArt, styles, { allowMultiple: true });
+export default CoverArt;

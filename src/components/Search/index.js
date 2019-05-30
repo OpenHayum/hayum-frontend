@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import SearchResult from "./SearchResult";
@@ -60,4 +59,4 @@ class Search extends Component {
   }
 }
 
-export default CSSModules(Search, styles, { allowMultiple: true });
+export default Search;

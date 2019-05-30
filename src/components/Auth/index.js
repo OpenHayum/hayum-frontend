@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Route, Switch, Link } from "react-router-dom";
@@ -62,4 +61,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   signUpUser,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CSSModules(Auth, styles, { allowMultiple: true }));
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

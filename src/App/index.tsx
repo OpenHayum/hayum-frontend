@@ -1,5 +1,4 @@
 import * as React from "react";
-import { CSSModules } from "react-css-modules";
 import { Switch } from "react-router-dom";
 import { AnimatedRoute } from "react-router-transition";
 
@@ -132,4 +131,4 @@ class App extends React.Component<any, any> {
   }
 }
 
-export default CSSModules(App, styles, { allowMultiple: true });
+export default App;

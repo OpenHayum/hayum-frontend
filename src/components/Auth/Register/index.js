@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CSSModules from "react-css-modules";
 import PropTypes from "prop-types";
 
 import Input from "Common/Input";
@@ -129,4 +128,4 @@ Register.propTypes = {
   signUpUser: PropTypes.func.isRequired
 };
 
-export default CSSModules(Register, styles, { allowMultiple: true });
+export default Register;

@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 // import PropTypes from "prop-types";
 
 import ListItem from "../common/ListItem";
@@ -19,4 +18,4 @@ SearchResult.propTypes = {};
 
 SearchResult.defaultProps = {};
 
-export default CSSModules(SearchResult, styles, { allowMultiple: true });
+export default SearchResult;
