@@ -4,7 +4,7 @@ const autoprefixer = require("autoprefixer");
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const eslintFormatter = require("react-dev-utils/eslintFormatter");
@@ -118,17 +118,27 @@ module.exports = {
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
         oneOf: [
-          // "url" loader works just like "file" loader but it also embeds
-          // assets smaller than specified size as data URLs to avoid requests.
-          {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve("url-loader"),
-            options: {
-              limit: 10000,
-              name: "static/media/[name].[hash:8].[ext]"
-            }
-          },
 
+          {
+            test: /\.css$/,
+            use: [
+              {
+                loader: MiniCssExtractPlugin.loader
+              },
+
+              {
+                loader: "css-loader",
+
+              },
+
+              {
+                loader: 'postcss-loader',
+                options: {
+                  plugins: () => [require('autoprefixer')]
+                }
+              }
+            ]
+          },
 
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
@@ -143,76 +153,30 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract(
-              Object.assign(
-                {
-                  fallback: {
-                    loader: require.resolve("style-loader"),
-                    options: {
-                      hmr: false
-                    }
-                  },
-                  use: [
-                    {
-                      loader: require.resolve("css-loader"),
-                      options: {
-                        importLoaders: 1,
-                        minimize: true,
-                        sourceMap: shouldUseSourceMap,
-                        localIdentName: "[name]__[local]--[hash:base64:8]"
-                      }
-                    },
-                    {
-                      loader: require.resolve("postcss-loader"),
-                      options: {
-                        // Necessary for external CSS imports to work
-                        // https://github.com/facebookincubator/create-react-app/issues/2677
-                        ident: "postcss",
-                        plugins: () => [
-                          require("postcss-flexbugs-fixes"),
-                          autoprefixer({
-                            browsers: [
-                              ">1%",
-                              "last 4 versions",
-                              "Firefox ESR",
-                              "not ie < 9" // React doesn't support IE8 anyway
-                            ],
-                            flexbox: "no-2009"
-                          })
-                        ]
-                      }
-                    }
-                  ]
-                },
-                extractTextPluginOptions
-              )
-            )
-            // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
-          },
-          {
             test: /\.scss$/,
-            use: ExtractTextPlugin.extract(
+            use: [{
+              loader: MiniCssExtractPlugin.loader
+            },
               {
-                use: [
-                  {
-                    loader: "css-loader",
-                    options: {
-                      modules: true,
-                      minimize: true,
-                      importLoaders: 1,
-                      localIdentName: "[hash:base64:8]"
-                    }
-                  },
-                  {
-                    loader: "sass-loader"
-                  }
-                ],
-                // use style-loader in development
-                fallback: "style-loader"
+                loader: "css-loader",
+                options: {
+                  sourceMap: true,
+                  modules: true,
+                  localIdentName: "[local]___[hash:base64:5]"
+                }
               },
-              extractTextPluginOptions
-            )
+              "sass-loader"
+            ]
+          },
+          // "url" loader works just like "file" loader but it also embeds
+          // assets smaller than specified size as data URLs to avoid requests.
+          {
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            loader: require.resolve("url-loader"),
+            options: {
+              limit: 10000,
+              name: "static/media/[name].[hash:8].[ext]"
+            }
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
@@ -256,7 +220,7 @@ module.exports = {
     // Minify the code.
 
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: cssFilename
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
@@ -286,25 +250,6 @@ module.exports = {
     "react-dom": "ReactDOM",
   },
   optimization: {
-    minimizer: [    new UglifyJsPlugin({ uglifyOptions: {
-      compress: {
-        warnings: false,
-        // Disabled because of an issue with Uglify breaking seemingly valid code:
-        // https://github.com/facebookincubator/create-react-app/issues/2376
-        // Pending further investigation:
-        // https://github.com/mishoo/UglifyJS2/issues/2011
-        comparisons: false
-      },
-      mangle: {
-        safari10: true
-      },
-      output: {
-        comments: false,
-        // Turned on because emoji and regex is not minified properly using default
-        // https://github.com/facebookincubator/create-react-app/issues/2488
-        ascii_only: true
-      },
-      sourceMap: shouldUseSourceMap
-    }})]
+    minimizer: [ new UglifyJsPlugin()]
   }
 };
