@@ -138,30 +138,10 @@ module.exports = {
                         test: /\.[tj]sx?$/,
                         include: paths.appSrc,
                         use: [
-
-
                             {
                                 loader: 'awesome-typescript-loader',
                                 options: {
                                     cacheDirectory: true,
-                                    useBabel: true,
-                                    babelOptions: {
-                                        babelrc: false,
-                                        presets:[],
-                                        plugins: [
-                                            [
-                                                'react-css-modules',
-                                                {
-                                                    "filetypes": {
-                                                        ".scss": {
-                                                            "syntax": "postcss-scss"
-                                                        }
-                                                    },
-                                                    "generateScopedName": "[name]__[local]--[hash:base64:8]"
-                                                }
-                                            ],
-                                        ]
-                                    }
                                 },
 
                             },
