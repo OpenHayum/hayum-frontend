@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(morgan("combined"));
 // Serve static assets
 app.use(
-  express.static(path.resolve(__dirname, "..", "build"), {
+  express.static(path.resolve(__dirname, "..", "static"), {
     maxAge: 365 * 24 * 60 * 60 * 1000
   })
 );
@@ -26,7 +26,7 @@ app.use(
 app.use("/api", controllers);
 
 app.use("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "..", "build", "index.html");
+  const filePath = path.resolve(__dirname, "..", "index.html");
   res.sendFile(filePath);
 });
 
