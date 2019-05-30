@@ -26,7 +26,7 @@ app.use(
 app.use("/api", controllers);
 
 app.use("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "..", "index.html");
+  const filePath = path.resolve(__dirname, "..", "index.ts.html");
   res.sendFile(filePath);
 });
 

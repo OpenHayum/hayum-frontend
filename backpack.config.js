@@ -5,7 +5,7 @@ module.exports = {
 
     // changes the name of the entry point from index -> main.js
     config.entry.main = [
-      './server/index.js'
+      './server/index.tsx'
     ];
 
     return config

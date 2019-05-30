@@ -18,7 +18,7 @@
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.2.0",
     "react-modal": "^3.1.11",
-    "react-redux": "^5.0.6",
+    "react-redux": "^7.0.3",
     "react-router-dom": "^4.2.2",
     "react-router-transition": "^1.2.0",
     "react-tabs": "^2.2.1",
@@ -42,6 +42,7 @@
     "postinstall": "yarn build:all"
   },
   "devDependencies": {
+    "@types/react-redux": "^7.0.9",
     "autoprefixer": "7.1.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "6.26.0",
